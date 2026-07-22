@@ -11,7 +11,7 @@ export default function Testimonials() {
           <span>Client Reviews & Social Proof</span>
         </div>
         <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 800, marginBottom: '1rem', color: 'var(--text-primary)' }}>
-          What Verified Clients Say About Working With Prasanth KJ
+          What Clients Say About Working With Prasanth
         </h2>
         <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.6 }}>
           100% Job Success Rate & Top Rated Status earned by delivering consistent quality, prompt communication, and high-impact web development.
@@ -68,8 +68,8 @@ export default function Testimonials() {
               <p
                 style={{
                   color: 'var(--text-secondary)',
-                  fontSize: '1rem',
-                  lineHeight: 1.6,
+                  fontSize: '0.975rem',
+                  lineHeight: 1.65,
                   fontStyle: 'italic',
                   marginBottom: '1.5rem',
                   position: 'relative',

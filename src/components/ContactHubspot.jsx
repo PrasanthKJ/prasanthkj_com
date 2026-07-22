@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HERO_DATA } from '../data/portfolioData';
-import { Mail, Send, CheckCircle2, Calendar } from 'lucide-react';
+import { Mail, Send, CheckCircle2, Calendar, ShieldCheck } from 'lucide-react';
 
 export default function ContactHubspot() {
   const [formData, setFormData] = useState({
@@ -8,12 +8,14 @@ export default function ContactHubspot() {
     email: '',
     projectType: 'Website (including E-commerce)',
     message: '',
+    acceptFollowups: true,
   });
 
   const [status, setStatus] = useState({ submitting: false, submitted: false, error: null });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+    setFormData({ ...formData, [e.target.name]: value });
   };
 
   const handleSubmit = async (e) => {
@@ -24,7 +26,7 @@ export default function ContactHubspot() {
       await new Promise((resolve) => setTimeout(resolve, 800));
 
       setStatus({ submitting: false, submitted: true, error: null });
-      setFormData({ name: '', email: '', projectType: 'Website (including E-commerce)', message: '' });
+      setFormData({ name: '', email: '', projectType: 'Website (including E-commerce)', message: '', acceptFollowups: true });
     } catch (err) {
       console.error('HubSpot submit error:', err);
       setStatus({ submitting: false, submitted: true, error: null });
@@ -95,7 +97,7 @@ export default function ContactHubspot() {
                   <Calendar size={20} />
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600 }}>15-Min Meeting</div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600 }}>15-Min Strategy Session</div>
                   <a
                     href={HERO_DATA.calendlyUrl}
                     target="_blank"
@@ -145,7 +147,7 @@ export default function ContactHubspot() {
                 </div>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-primary)' }}>Message Received!</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-                  Thank you for reaching out. Your inquiry has been received. Prasanth KJ will respond to your email shortly.
+                  Thank you for reaching out. Your inquiry has been received. Prasanth will respond to your email shortly.
                 </p>
                 <button
                   onClick={() => setStatus({ submitting: false, submitted: false, error: null })}
@@ -260,6 +262,36 @@ export default function ContactHubspot() {
                   ></textarea>
                 </div>
 
+                {/* Service Offers & Followup Checkbox (Default Checked) */}
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
+                  <input
+                    type="checkbox"
+                    id="acceptFollowups"
+                    name="acceptFollowups"
+                    checked={formData.acceptFollowups}
+                    onChange={handleChange}
+                    style={{ marginTop: '3px', cursor: 'pointer' }}
+                  />
+                  <label htmlFor="acceptFollowups" style={{ fontSize: '0.825rem', color: 'var(--text-secondary)', cursor: 'pointer', lineHeight: 1.4 }}>
+                    I agree to receive web service offers, project updates, and follow-up emails from Prasanth.
+                  </label>
+                </div>
+
+                {/* Privacy Disclaimer Above Button */}
+                <div
+                  style={{
+                    fontSize: '0.775rem',
+                    color: 'var(--text-muted)',
+                    background: 'var(--bg-card)',
+                    padding: '0.65rem 0.85rem',
+                    borderRadius: 'var(--radius-sm)',
+                    border: '1px solid var(--border-subtle)',
+                    lineHeight: 1.4,
+                  }}
+                >
+                  🔒 By submitting this form, you agree to allow Prasanth to store your email address and contact details to respond to your inquiry and send relevant follow-ups.
+                </div>
+
                 <button
                   type="submit"
                   disabled={status.submitting}
@@ -269,11 +301,6 @@ export default function ContactHubspot() {
                   {status.submitting ? 'Submitting...' : 'Submit Inquiry'}
                   <Send size={16} />
                 </button>
-
-                {/* Subtle Disclaimer Note */}
-                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textAlign: 'center' }}>
-                  🔒 Your email is 100% private. Form submissions integrated with HubSpot CRM.
-                </div>
               </form>
             )}
           </div>

@@ -186,29 +186,29 @@ export const AGENCY_WORKFLOW = [
 export const TESTIMONIALS = [
   {
     id: 1,
-    client: "Service Business Client",
+    client: "Website Client",
     location: "United States",
-    project: "WordPress Custom Lead Generation Site",
+    project: "WordPress & Custom Web Development",
     rating: 5,
-    quote: "Prasanth is a top-tier WordPress developer. He completed our site ahead of schedule, fixed all mobile responsiveness issues, and optimized our Google PageSpeed score to 95+. Extremely professional and reliable!",
+    quote: "Outstanding experience from start to finish. The website turned out exactly as I had hoped, and the quality of work was top-notch. Throughout the project, he was responsive, professional, and willing to work through any issues or changes that came up along the way.",
     verified: "Verified Upwork Review"
   },
   {
     id: 2,
-    client: "E-Commerce Agency Client",
+    client: "E-Commerce Client",
     location: "United States",
-    project: "Shopify Custom Theme & Checkout Flow",
+    project: "Custom E-Commerce & Optimization",
     rating: 5,
-    quote: "Excellent communication and technical execution on our Shopify e-commerce store. Prasanth understood our agency workflow and delivered clean, maintainable Liquid code. Will definitely rehire for future projects.",
+    quote: "Prasanth is very knowledgeable and easy to work with. He fixed our website bugs quickly and optimized performance. Excellent work quality and great communication throughout!",
     verified: "Verified Upwork Review"
   },
   {
     id: 3,
-    client: "Hospitality Property Owner",
-    location: "Florida, USA",
-    project: "Florida Hotel & Vacation Rental System",
+    client: "Agency Partner",
+    location: "United States",
+    project: "Custom Web Application",
     rating: 5,
-    quote: "Outstanding job on our hotel reservation booking platform. The custom booking logic and multi-channel calendar sync with Airbnb and VRBO were built flawlessly. Highly recommended!",
+    quote: "Highly skilled web developer with exceptional problem-solving skills. Delivered our custom features smoothly and promptly. Will definitely hire Prasanth again!",
     verified: "Verified Upwork Review"
   }
 ];
