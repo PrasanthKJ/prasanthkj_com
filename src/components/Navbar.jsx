@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { HERO_DATA } from '../data/portfolioData';
-import { Menu, X, ArrowUpRight, ExternalLink } from 'lucide-react';
+import { Menu, X, ArrowUpRight, ExternalLink, Sun, Moon } from 'lucide-react';
 
-export default function Navbar() {
+export default function Navbar({ theme = 'light', toggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -35,11 +35,11 @@ export default function Navbar() {
         padding: scrolled ? '0.75rem 0' : '1.25rem 0',
         transition: 'all 0.3s ease',
         background: scrolled
-          ? 'rgba(7, 8, 10, 0.85)'
+          ? 'var(--nav-bg)'
           : 'transparent',
         backdropFilter: scrolled ? 'blur(16px)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid transparent',
+        borderBottom: scrolled ? '1px solid var(--nav-border)' : '1px solid transparent',
       }}
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -51,7 +51,7 @@ export default function Navbar() {
             alignItems: 'center',
             gap: '0.75rem',
             textDecoration: 'none',
-            color: '#ffffff',
+            color: 'var(--text-primary)',
             fontWeight: 800,
             fontSize: '1.25rem',
             fontFamily: 'var(--font-heading)',
@@ -62,12 +62,12 @@ export default function Navbar() {
               width: '38px',
               height: '38px',
               borderRadius: '12px',
-              background: 'linear-gradient(135deg, #8b5cf6 0%, #10b981 100%)',
+              background: 'linear-gradient(135deg, #2C5EAD 0%, #10b981 100%)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               color: '#ffffff',
-              boxShadow: '0 4px 15px rgba(139, 92, 246, 0.3)',
+              boxShadow: '0 4px 15px rgba(44, 94, 173, 0.3)',
             }}
           >
             PK
@@ -88,10 +88,10 @@ export default function Navbar() {
             display: 'flex',
             alignItems: 'center',
             gap: '1.5rem',
-            background: 'rgba(255, 255, 255, 0.03)',
+            background: 'var(--btn-sec-bg)',
             padding: '0.4rem 1.25rem',
             borderRadius: 'var(--radius-full)',
-            border: '1px solid rgba(255, 255, 255, 0.08)',
+            border: '1px solid var(--border-subtle)',
           }}
         >
           {navLinks.map((link) => (
@@ -101,7 +101,7 @@ export default function Navbar() {
               target={link.external ? '_blank' : '_self'}
               rel={link.external ? 'noopener noreferrer' : ''}
               style={{
-                color: link.external ? '#a7f3d0' : 'var(--text-secondary)',
+                color: link.external ? 'var(--accent-emerald)' : 'var(--text-secondary)',
                 textDecoration: 'none',
                 fontSize: '0.875rem',
                 fontWeight: link.external ? 600 : 500,
@@ -110,8 +110,8 @@ export default function Navbar() {
                 gap: '0.25rem',
                 transition: 'color 0.2s ease',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = link.external ? '#a7f3d0' : 'var(--text-secondary)')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-purple)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = link.external ? 'var(--accent-emerald)' : 'var(--text-secondary)')}
             >
               {link.name}
               {link.external && <ExternalLink size={12} />}
@@ -119,8 +119,18 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Action CTA */}
+        {/* Action CTA & Theme Toggle Button */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          {/* Theme Switcher Toggle - Placed right before Get in Touch */}
+          <button
+            onClick={toggleTheme}
+            className="theme-toggle-btn"
+            title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+            aria-label="Toggle dark/light theme"
+          >
+            {theme === 'dark' ? <Sun size={20} color="#f59e0b" /> : <Moon size={20} color="#2C5EAD" />}
+          </button>
+
           <a
             href="#contact"
             className="btn-primary"
@@ -139,9 +149,9 @@ export default function Navbar() {
             className="mobile-toggle"
             aria-label="Toggle menu"
             style={{
-              background: 'rgba(255, 255, 255, 0.05)',
+              background: 'var(--btn-sec-bg)',
               border: '1px solid var(--border-subtle)',
-              color: '#ffffff',
+              color: 'var(--text-primary)',
               padding: '0.5rem',
               borderRadius: 'var(--radius-sm)',
               cursor: 'pointer',

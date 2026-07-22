@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import SidebarNav from './components/SidebarNav';
 import Hero from './components/Hero';
@@ -13,15 +13,28 @@ import ContactHubspot from './components/ContactHubspot';
 import Footer from './components/Footer';
 
 export default function App() {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'light';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+  };
+
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', background: 'var(--bg-primary)' }}>
-      {/* Top Floating Glassmorphism Navbar */}
-      <Navbar />
+      {/* Top Floating Glassmorphism Navbar with Theme Switcher */}
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
 
       {/* Main Page Layout Container */}
       <div className="container" style={{ flex: 1 }}>
         <div className="page-wrapper">
-          {/* Sticky Side Index Navigator inspired by jonnyczar.com */}
+          {/* Sticky Side Index Navigator */}
           <SidebarNav />
 
           {/* Main Content Area */}

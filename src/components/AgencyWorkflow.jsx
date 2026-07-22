@@ -53,7 +53,7 @@ export default function AgencyWorkflow() {
                     fontFamily: 'var(--font-heading)',
                     fontSize: '2.5rem',
                     fontWeight: 900,
-                    color: 'rgba(139, 92, 246, 0.35)',
+                    color: 'rgba(44, 94, 173, 0.35)',
                     lineHeight: 1,
                   }}
                 >
@@ -109,8 +109,8 @@ export default function AgencyWorkflow() {
           marginTop: '3rem',
           padding: '1.75rem',
           borderRadius: 'var(--radius-md)',
-          background: 'rgba(139, 92, 246, 0.08)',
-          border: '1px solid rgba(139, 92, 246, 0.25)',
+          background: 'rgba(44, 94, 173, 0.08)',
+          border: '1px solid rgba(44, 94, 173, 0.25)',
           display: 'flex',
           flexWrap: 'wrap',
           alignItems: 'center',

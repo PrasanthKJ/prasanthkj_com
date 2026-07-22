@@ -145,7 +145,7 @@ export const FEATURED_PROJECTS = [
       speed: "99/100 PageSpeed"
     },
     badgeColor: "purple",
-    accentGlow: "rgba(139, 92, 246, 0.15)"
+    accentGlow: "rgba(44, 94, 173, 0.15)"
   }
 ];
 

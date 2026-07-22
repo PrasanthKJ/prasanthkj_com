@@ -10,7 +10,7 @@ export default function USSmallBiz() {
         style={{
           padding: 'clamp(2rem, 4vw, 3.5rem)',
           background: 'linear-gradient(135deg, rgba(20, 24, 34, 0.9) 0%, rgba(13, 15, 20, 0.95) 100%)',
-          border: '1px solid rgba(139, 92, 246, 0.2)',
+          border: '1px solid rgba(44, 94, 173, 0.2)',
           boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5)',
         }}
       >

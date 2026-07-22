@@ -7,7 +7,7 @@ export default function Highlights() {
     switch (iconName) {
       case 'Award': return <Award size={28} color="#f59e0b" />;
       case 'Code': return <Code size={28} color="#10b981" />;
-      case 'Target': return <Target size={28} color="#8b5cf6" />;
+      case 'Target': return <Target size={28} color="#2C5EAD" />;
       case 'CheckCircle': return <CheckCircle size={28} color="#06b6d4" />;
       default: return <Award size={28} color="#f59e0b" />;
     }
@@ -65,7 +65,7 @@ export default function Highlights() {
                   fontWeight: 700,
                   textTransform: 'uppercase',
                   letterSpacing: '0.05em',
-                  color: item.color === 'gold' ? '#fde68a' : item.color === 'emerald' ? '#a7f3d0' : '#c084fc',
+                  color: item.color === 'gold' ? '#fde68a' : item.color === 'emerald' ? '#a7f3d0' : '#60a5fa',
                 }}
               >
                 {item.badge}

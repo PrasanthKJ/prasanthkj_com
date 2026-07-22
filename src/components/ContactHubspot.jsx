@@ -39,7 +39,7 @@ export default function ContactHubspot() {
         style={{
           padding: 'clamp(2rem, 4vw, 3.5rem)',
           background: 'linear-gradient(135deg, rgba(20, 24, 34, 0.9) 0%, rgba(13, 15, 20, 0.95) 100%)',
-          border: '1px solid rgba(139, 92, 246, 0.3)',
+          border: '1px solid rgba(44, 94, 173, 0.3)',
           boxShadow: '0 20px 60px rgba(0, 0, 0, 0.6)',
         }}
       >
@@ -88,7 +88,7 @@ export default function ContactHubspot() {
                     width: '44px',
                     height: '44px',
                     borderRadius: '12px',
-                    background: 'rgba(139, 92, 246, 0.12)',
+                    background: 'rgba(44, 94, 173, 0.12)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',

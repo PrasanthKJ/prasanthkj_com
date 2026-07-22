@@ -1,12 +1,64 @@
-/* Prasanth KJ Portfolio - Design System & Global Styles */
-:root {
+/* Prasanth KJ Portfolio - Light Mode Default & Dark Mode Toggle System */
+
+/* Default Theme: Light Mode */
+:root, [data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-card-hover: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.8);
+  --border-subtle: rgba(44, 94, 173, 0.12);
+  --border-hover: rgba(44, 94, 173, 0.4);
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  
+  --accent-emerald: #059669;
+  --accent-emerald-glow: rgba(5, 150, 105, 0.15);
+  --accent-purple: #2C5EAD;
+  --accent-purple-glow: rgba(44, 94, 173, 0.2);
+  --accent-cyan: #0284c7;
+  --accent-gold: #d97706;
+  --accent-gold-glow: rgba(217, 119, 6, 0.15);
+
+  --card-shadow: 0 10px 30px rgba(44, 94, 173, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 20px 40px rgba(44, 94, 173, 0.16);
+
+  --nav-bg: rgba(255, 255, 255, 0.88);
+  --nav-border: rgba(44, 94, 173, 0.12);
+
+  --pill-bg: rgba(44, 94, 173, 0.08);
+  --pill-text: #1d4ed8;
+  --pill-border: rgba(44, 94, 173, 0.2);
+
+  --pill-emerald-bg: rgba(16, 185, 129, 0.1);
+  --pill-emerald-text: #047857;
+
+  --pill-gold-bg: rgba(245, 158, 11, 0.1);
+  --pill-gold-text: #b45309;
+
+  --btn-sec-bg: rgba(44, 94, 173, 0.06);
+  --btn-sec-text: #0f172a;
+  --btn-sec-border: rgba(44, 94, 173, 0.2);
+
+  --input-bg: #ffffff;
+  --ambient-opacity: 0.12;
+
+  --gradient-main: linear-gradient(135deg, #0f172a 0%, #334155 50%, #2C5EAD 100%);
+  --sidebar-bg: rgba(255, 255, 255, 0.8);
+  --sidebar-active-bg: rgba(44, 94, 173, 0.12);
+}
+
+/* Toggled Theme: Dark Mode */
+[data-theme="dark"] {
   --bg-primary: #07080a;
   --bg-secondary: #0d0f14;
   --bg-card: rgba(20, 24, 34, 0.65);
   --bg-card-hover: rgba(28, 34, 48, 0.85);
   --bg-glass: rgba(255, 255, 255, 0.03);
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(139, 92, 246, 0.35);
+  --border-hover: rgba(44, 94, 173, 0.35);
   
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
@@ -14,12 +66,41 @@
   
   --accent-emerald: #10b981;
   --accent-emerald-glow: rgba(16, 185, 129, 0.25);
-  --accent-purple: #8b5cf6;
-  --accent-purple-glow: rgba(139, 92, 246, 0.25);
+  --accent-purple: #2C5EAD;
+  --accent-purple-glow: rgba(44, 94, 173, 0.25);
   --accent-cyan: #06b6d4;
   --accent-gold: #f59e0b;
   --accent-gold-glow: rgba(245, 158, 11, 0.25);
-  
+
+  --card-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+  --card-shadow-hover: 0 12px 36px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-purple-glow);
+
+  --nav-bg: rgba(7, 8, 10, 0.85);
+  --nav-border: rgba(255, 255, 255, 0.08);
+
+  --pill-bg: rgba(44, 94, 173, 0.12);
+  --pill-text: #60a5fa;
+  --pill-border: rgba(44, 94, 173, 0.25);
+
+  --pill-emerald-bg: rgba(16, 185, 129, 0.12);
+  --pill-emerald-text: #6ee7b7;
+
+  --pill-gold-bg: rgba(245, 158, 11, 0.12);
+  --pill-gold-text: #fcd34d;
+
+  --btn-sec-bg: rgba(255, 255, 255, 0.05);
+  --btn-sec-text: #f8fafc;
+  --btn-sec-border: rgba(255, 255, 255, 0.08);
+
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --ambient-opacity: 0.35;
+
+  --gradient-main: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #2C5EAD 100%);
+  --sidebar-bg: rgba(20, 24, 34, 0.5);
+  --sidebar-active-bg: rgba(44, 94, 173, 0.18);
+}
+
+:root {
   --font-heading: 'Outfit', 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   
@@ -40,7 +121,6 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
 }
 
 body {
@@ -51,6 +131,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom Scrollbar */
@@ -61,8 +142,11 @@ body {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #cbd5e1;
   border-radius: 4px;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #1e293b;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-purple);
@@ -70,30 +154,31 @@ body {
 
 /* Selection */
 ::selection {
-  background: rgba(139, 92, 246, 0.3);
-  color: #ffffff;
+  background: rgba(44, 94, 173, 0.25);
+  color: var(--accent-purple);
 }
 
 /* Typography Utilities */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   letter-spacing: -0.02em;
+  color: var(--text-primary);
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, var(--accent-purple) 100%);
+  background: var(--gradient-main);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-text-emerald {
-  background: linear-gradient(135deg, #ffffff 0%, #a7f3d0 50%, var(--accent-emerald) 100%);
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-emerald) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gradient-text-gold {
-  background: linear-gradient(135deg, #ffffff 0%, #fde68a 50%, var(--accent-gold) 100%);
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-gold) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -124,12 +209,13 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
   transition: all var(--transition-smooth);
 }
 
 .glass-card:hover {
   border-color: var(--border-hover);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-purple-glow);
+  box-shadow: var(--card-shadow-hover);
 }
 
 /* Badge Pills */
@@ -143,21 +229,39 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  background: rgba(139, 92, 246, 0.12);
-  border: 1px solid rgba(139, 92, 246, 0.25);
-  color: #c084fc;
+  background: var(--pill-bg);
+  border: 1px solid var(--pill-border);
+  color: var(--pill-text);
 }
 
 .pill-badge-emerald {
-  background: rgba(16, 185, 129, 0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.825rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background: var(--pill-emerald-bg);
   border: 1px solid rgba(16, 185, 129, 0.25);
-  color: #6ee7b7;
+  color: var(--pill-emerald-text);
 }
 
 .pill-badge-gold {
-  background: rgba(245, 158, 11, 0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.825rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background: var(--pill-gold-bg);
   border: 1px solid rgba(245, 158, 11, 0.3);
-  color: #fcd34d;
+  color: var(--pill-gold-text);
 }
 
 /* Buttons */
@@ -168,8 +272,8 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.6rem;
   padding: 0.85rem 1.75rem;
   border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--accent-purple) 0%, #6d28d9 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--accent-purple) 0%, #1e4078 100%);
+  color: #ffffff !important;
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 0.95rem;
@@ -182,7 +286,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.45);
+  box-shadow: 0 8px 30px rgba(44, 94, 173, 0.45);
 }
 
 .btn-secondary {
@@ -192,20 +296,20 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.6rem;
   padding: 0.85rem 1.75rem;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-primary);
+  background: var(--btn-sec-bg);
+  color: var(--btn-sec-text) !important;
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--btn-sec-border);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(44, 94, 173, 0.12);
+  border-color: var(--accent-purple);
   transform: translateY(-2px);
 }
 
@@ -216,7 +320,7 @@ h1, h2, h3, h4, h5, h6 {
   filter: blur(120px);
   pointer-events: none;
   z-index: 0;
-  opacity: 0.35;
+  opacity: var(--ambient-opacity);
 }
 
 .glow-1 {
@@ -243,10 +347,32 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--accent-cyan);
 }
 
+/* Theme Toggle Switch Button */
+.theme-toggle-btn {
+  background: var(--btn-sec-bg);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(44, 94, 173, 0.15);
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  transform: rotate(15deg);
+}
+
 /* Animations */
 @keyframes pulseGlow {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.05); }
+  0%, 100% { opacity: var(--ambient-opacity); transform: scale(1); }
+  50% { opacity: calc(var(--ambient-opacity) * 1.5); transform: scale(1.05); }
 }
 
 .pulse-animation {

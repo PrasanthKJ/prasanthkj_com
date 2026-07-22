@@ -93,7 +93,7 @@ export default function SidebarNav() {
                 fontSize: '0.85rem',
                 fontWeight: isActive ? 700 : 500,
                 color: isActive ? '#ffffff' : 'var(--text-secondary)',
-                background: isActive ? 'rgba(139, 92, 246, 0.18)' : 'transparent',
+                background: isActive ? 'rgba(44, 94, 173, 0.18)' : 'transparent',
                 borderLeft: isActive ? '3px solid var(--accent-purple)' : '3px solid transparent',
                 transition: 'all 0.2s ease',
               }}
