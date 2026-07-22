@@ -59,43 +59,43 @@ export const HIGHLIGHTS = [
 
 export const US_SMALL_BIZ_SOLUTIONS = [
   {
-    id: "lawn-mowing",
-    title: "Lawn Mowing & Landscaping",
-    subtitle: "Turn Local Searchers into Monthly Retainer Customers",
+    id: "local-service-biz",
+    title: "Local Service Businesses",
+    subtitle: "Lawn Care, Cleaning, HVAC, Plumbing & Trade Contractors",
     features: [
       "Instant Online Quote & Service Booking Form",
       "Localized Google Map SEO & City-Page Targeting",
-      "Before/After Photo Gallery & Customer Reviews",
-      "Mobile Click-to-Call & Click-to-Text Buttons"
+      "Before/After Photo Gallery & Verified Customer Reviews",
+      "Mobile Click-to-Call & Emergency Dispatch Bar"
     ],
     tag: "High Lead Conversion",
     impact: "+210% Booking Rate"
   },
   {
-    id: "carpet-cleaning",
-    title: "Carpet & Commercial Cleaning",
-    subtitle: "High-Converting Websites for Residential & Commercial Cleaners",
+    id: "ecommerce-stores",
+    title: "E-Commerce Stores",
+    subtitle: "High-Converting Shopify & WooCommerce Online Shops",
     features: [
-      "Room/Square Foot Price Calculator Integration",
-      "Automatic SMS & Email Appointment Confirmations",
-      "Stripe / Square Instant Online Payments",
-      "SEO Engineered for High Intent Keywords (e.g. 'Carpet Cleaner Near Me')"
+      "Frictionless One-Page Checkout & Payment Funnel",
+      "Automated Inventory Sync & Stripe/PayPal Gateway Integration",
+      "Sub-Second Fast Loading Speed (0.9s Core Web Vitals)",
+      "Custom Shopify Liquid / WooCommerce Theme Architecture"
     ],
-    tag: "Instant Quote Engine",
-    impact: "+180% Inquiries"
+    tag: "Conversion Optimized",
+    impact: "2.8x Direct Sales"
   },
   {
-    id: "local-contractors",
-    title: "HVAC, Plumbing & Home Services",
-    subtitle: "Build 100% Trust with Local Homeowners & Property Owners",
+    id: "landing-pages",
+    title: "Lead Generation Landing Pages",
+    subtitle: "Turn Paid Ad Traffic & Search Visitors into Inquiries",
     features: [
-      "Emergency 24/7 Dispatch Contact Bar",
-      "License, Insurance & Verified Badges Showcase",
-      "Financing Options & Estimate Request Forms",
-      "Speed Optimized (Loads in under 1.2s on 4G)"
+      "Single-Focused Value Proposition & High-CTR CTA Stack",
+      "HubSpot CRM Direct Form & Email Autoresponder Integration",
+      "A/B Test Ready & Mobile-First Responsive Layout",
+      "Zero-Distraction Layout Engineered for Inbound Leads"
     ],
-    tag: "Local Service SEO",
-    impact: "+250% Phone Leads"
+    tag: "High ROI Funnels",
+    impact: "+300% Inquiries"
   }
 ];
 

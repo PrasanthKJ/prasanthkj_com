@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { US_SMALL_BIZ_SOLUTIONS, HERO_DATA } from '../data/portfolioData';
-import { CheckCircle2, Calendar, Zap, ShieldCheck, MapPin, Trees, Sparkles, Wrench } from 'lucide-react';
+import { CheckCircle2, Calendar, Zap, ShieldCheck, MapPin, Wrench, ShoppingBag, Target } from 'lucide-react';
 
 export default function USSmallBiz() {
   const [activeTab, setActiveTab] = useState(0);
   const activeSolution = US_SMALL_BIZ_SOLUTIONS[activeTab] || US_SMALL_BIZ_SOLUTIONS[0];
 
-  const tabIcons = [Trees, Sparkles, Wrench];
+  const tabIcons = [Wrench, ShoppingBag, Target];
 
   return (
     <section id="small-biz" style={{ padding: '80px 0' }}>
@@ -21,15 +21,15 @@ export default function USSmallBiz() {
         <div style={{ maxWidth: '800px', marginBottom: '2.5rem' }}>
           <div className="pill-badge-emerald" style={{ marginBottom: '1rem', gap: '6px' }}>
             <MapPin size={14} />
-            <span>Local Business Web Solutions</span>
+            <span>Tailored Web Solutions</span>
           </div>
 
           <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 800, marginBottom: '1rem', lineHeight: 1.2, color: 'var(--text-primary)' }}>
-            High-Converting Websites Engineered for <span className="gradient-text-emerald">Local Service Businesses</span>
+            High-Converting Websites Engineered for <span className="gradient-text-emerald">Business Growth</span>
           </h2>
 
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.6 }}>
-            Turn casual searchers into phone calls and monthly bookings. Click an industry below to see tailored web features:
+            Select a business category below to explore custom web features, capabilities, and conversion architecture:
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export default function USSmallBiz() {
         >
           {US_SMALL_BIZ_SOLUTIONS.map((item, idx) => {
             const isSelected = activeTab === idx;
-            const IconComponent = tabIcons[idx] || Trees;
+            const IconComponent = tabIcons[idx] || Wrench;
 
             return (
               <button
@@ -122,7 +122,7 @@ export default function USSmallBiz() {
               }}
             >
               <Zap size={16} />
-              <span>Includes Local Schema & Mobile Call Engine</span>
+              <span>Mobile-First & Performance Engineered</span>
             </div>
           </div>
 
@@ -187,10 +187,10 @@ export default function USSmallBiz() {
             </div>
             <div>
               <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-primary)' }}>
-                100% Mobile Optimized & Click-To-Call Ready
+                100% Mobile Optimized & Conversion Focused
               </h4>
               <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
-                Over 78% of local service inquiries originate on mobile devices. Your website will be fast, secure, and ready to capture leads.
+                Over 78% of web traffic originates on mobile devices. Your website will be fast, secure, and built to turn visitors into leads.
               </p>
             </div>
           </div>
