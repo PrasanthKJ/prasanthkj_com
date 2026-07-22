@@ -1,6 +1,6 @@
 import React from 'react';
 import { HERO_DATA } from '../data/portfolioData';
-import { Award, ArrowRight, CheckCircle, Mail, ExternalLink, Calendar } from 'lucide-react';
+import { Award, CheckCircle, Mail, Calendar } from 'lucide-react';
 import { FacebookIcon, TwitterIcon, LinkedinIcon } from './SocialIcons';
 
 export default function Hero() {
@@ -98,10 +98,10 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             title="X / Twitter"
-            style={{ color: '#1da1f2', display: 'flex', alignItems: 'center', gap: '4px', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem' }}
+            style={{ color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '4px', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem' }}
           >
-            <TwitterIcon size={18} color="#1da1f2" />
-            <span>Twitter / X</span>
+            <TwitterIcon size={18} color="var(--text-primary)" />
+            <span>X (Twitter)</span>
           </a>
 
           <span style={{ color: 'var(--border-subtle)' }}>|</span>
@@ -143,24 +143,6 @@ export default function Hero() {
 
           <a href="#works" className="btn-secondary" style={{ padding: '0.95rem 2rem', fontSize: '1rem' }}>
             View Client Case Studies
-          </a>
-
-          <a
-            href={HERO_DATA.blogUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              color: 'var(--accent-emerald)',
-              fontSize: '0.95rem',
-              fontWeight: 600,
-              textDecoration: 'none',
-              marginLeft: '0.5rem',
-            }}
-          >
-            Visit WordPress Blog <ExternalLink size={14} />
           </a>
         </div>
       </div>

@@ -81,6 +81,7 @@ export default function SidebarNav() {
             <a
               key={sec.id}
               href={`#${sec.id}`}
+              className={isActive ? 'sidebar-active-glow' : ''}
               style={{
                 display: 'flex',
                 alignItems: 'center',

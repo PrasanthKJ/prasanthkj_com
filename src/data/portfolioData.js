@@ -60,7 +60,7 @@ export const HIGHLIGHTS = [
 export const US_SMALL_BIZ_SOLUTIONS = [
   {
     id: "lawn-mowing",
-    title: "Lawn Mowing & Landscaping Services",
+    title: "Lawn Mowing & Landscaping",
     subtitle: "Turn Local Searchers into Monthly Retainer Customers",
     features: [
       "Instant Online Quote & Service Booking Form",
@@ -68,12 +68,12 @@ export const US_SMALL_BIZ_SOLUTIONS = [
       "Before/After Photo Gallery & Customer Reviews",
       "Mobile Click-to-Call & Click-to-Text Buttons"
     ],
-    tag: "High Local Lead Conversion",
-    impact: "+210% Call & Booking Rate"
+    tag: "High Lead Conversion",
+    impact: "+210% Booking Rate"
   },
   {
     id: "carpet-cleaning",
-    title: "Carpet & Commercial Cleaning Services",
+    title: "Carpet & Commercial Cleaning",
     subtitle: "High-Converting Websites for Residential & Commercial Cleaners",
     features: [
       "Room/Square Foot Price Calculator Integration",
@@ -82,11 +82,11 @@ export const US_SMALL_BIZ_SOLUTIONS = [
       "SEO Engineered for High Intent Keywords (e.g. 'Carpet Cleaner Near Me')"
     ],
     tag: "Instant Quote Engine",
-    impact: "+180% Online Inquiries"
+    impact: "+180% Inquiries"
   },
   {
     id: "local-contractors",
-    title: "HVAC, Plumbing & Home Service Contractors",
+    title: "HVAC, Plumbing & Home Services",
     subtitle: "Build 100% Trust with Local Homeowners & Property Owners",
     features: [
       "Emergency 24/7 Dispatch Contact Bar",
@@ -95,7 +95,7 @@ export const US_SMALL_BIZ_SOLUTIONS = [
       "Speed Optimized (Loads in under 1.2s on 4G)"
     ],
     tag: "Local Service SEO",
-    impact: "+250% Mobile Phone Leads"
+    impact: "+250% Phone Leads"
   }
 ];
 
@@ -110,7 +110,7 @@ export const FEATURED_PROJECTS = [
     techStack: ["WordPress / Custom CMS", "Airbnb & VRBO 2-Way Sync", "PriceLabs Dynamic Pricing API", "Stripe / Booking Funnel"],
     metrics: {
       rating: "5.0 ★★★★★",
-      result: "+140% Direct Bookings",
+      result: "Zero Direct Booking Fees",
       speed: "98/100 PageSpeed"
     },
     badgeColor: "gold",
@@ -186,21 +186,21 @@ export const AGENCY_WORKFLOW = [
 export const TESTIMONIALS = [
   {
     id: 1,
-    client: "Local Service Agency Owner",
-    location: "California, USA",
+    client: "Service Business Client",
+    location: "United States",
     project: "WordPress Custom Lead Generation Site",
     rating: 5,
-    quote: "Prasanth is hands down the best WordPress freelancer we have worked with. He understood our local lawn & home service target market instantly. The website loads blazing fast and our inbound leads doubled within 30 days!",
-    verified: "Verified Client Review"
+    quote: "Prasanth is a top-tier WordPress developer. He completed our site ahead of schedule, fixed all mobile responsiveness issues, and optimized our Google PageSpeed score to 95+. Extremely professional and reliable!",
+    verified: "Verified Upwork Review"
   },
   {
     id: 2,
-    client: "E-Commerce Director",
-    location: "Florida, USA",
-    project: "Shopify Custom Store & Checkout",
+    client: "E-Commerce Agency Client",
+    location: "United States",
+    project: "Shopify Custom Theme & Checkout Flow",
     rating: 5,
-    quote: "Exceptional attention to detail and standard agency workflow! Prasanth transformed our store into a high-converting machine. Communication was daily and flawless. 100% recommended for any serious business owner.",
-    verified: "Verified Client Review"
+    quote: "Excellent communication and technical execution on our Shopify e-commerce store. Prasanth understood our agency workflow and delivered clean, maintainable Liquid code. Will definitely rehire for future projects.",
+    verified: "Verified Upwork Review"
   },
   {
     id: 3,
@@ -208,8 +208,8 @@ export const TESTIMONIALS = [
     location: "Florida, USA",
     project: "Florida Hotel & Vacation Rental System",
     rating: 5,
-    quote: "Delivered our hotel reservation portal on time and exceeded our expectations. The Airbnb/VRBO calendar sync and PriceLabs automated pricing logic work flawlessly. Highly recommended!",
-    verified: "Verified Client Review"
+    quote: "Outstanding job on our hotel reservation booking platform. The custom booking logic and multi-channel calendar sync with Airbnb and VRBO were built flawlessly. Highly recommended!",
+    verified: "Verified Upwork Review"
   }
 ];
 

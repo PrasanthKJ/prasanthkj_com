@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { HERO_DATA } from '../data/portfolioData';
-import { Mail, Send, CheckCircle2, ShieldCheck, Calendar } from 'lucide-react';
+import { Mail, Send, CheckCircle2, Calendar } from 'lucide-react';
 
 export default function ContactHubspot() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    projectType: 'WordPress Website',
-    budget: '$1,000 - $3,000',
+    projectType: 'Website (including E-commerce)',
     message: '',
   });
 
@@ -25,7 +24,7 @@ export default function ContactHubspot() {
       await new Promise((resolve) => setTimeout(resolve, 800));
 
       setStatus({ submitting: false, submitted: true, error: null });
-      setFormData({ name: '', email: '', projectType: 'WordPress Website', budget: '$1,000 - $3,000', message: '' });
+      setFormData({ name: '', email: '', projectType: 'Website (including E-commerce)', message: '' });
     } catch (err) {
       console.error('HubSpot submit error:', err);
       setStatus({ submitting: false, submitted: true, error: null });
@@ -53,7 +52,7 @@ export default function ContactHubspot() {
             </h2>
 
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.6, marginBottom: '2rem' }}>
-              Whether you need a brand-new <strong>WordPress site</strong>, a high-converting <strong>Shopify e-commerce store</strong>, or a targeted local lead website for your <strong>Small Business</strong>, fill out the form or schedule a direct meeting on Calendly. I'll respond within 12 hours.
+              Whether you need a brand-new website, a high-converting e-commerce store, or a targeted local lead website for your Small Business, fill out the form or schedule a direct meeting on Calendly. I'll respond within 12 hours.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -107,29 +106,6 @@ export default function ContactHubspot() {
                   </a>
                 </div>
               </div>
-
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <div
-                  style={{
-                    width: '44px',
-                    height: '44px',
-                    borderRadius: '12px',
-                    background: 'var(--pill-bg)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'var(--accent-purple)',
-                  }}
-                >
-                  <ShieldCheck size={20} />
-                </div>
-                <div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600 }}>HubSpot Integrated Form</div>
-                  <div style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: '0.95rem' }}>
-                    Submissions synced directly to HubSpot CRM
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -169,7 +145,7 @@ export default function ContactHubspot() {
                 </div>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-primary)' }}>Message Received!</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-                  Thank you for reaching out. Your inquiry has been logged in HubSpot CRM. Prasanth KJ will respond to your email shortly.
+                  Thank you for reaching out. Your inquiry has been received. Prasanth KJ will respond to your email shortly.
                 </p>
                 <button
                   onClick={() => setStatus({ submitting: false, submitted: false, error: null })}
@@ -231,60 +207,31 @@ export default function ContactHubspot() {
                   />
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '0.4rem' }}>
-                      Project Type
-                    </label>
-                    <select
-                      name="projectType"
-                      value={formData.projectType}
-                      onChange={handleChange}
-                      style={{
-                        width: '100%',
-                        padding: '0.75rem 0.75rem',
-                        borderRadius: 'var(--radius-sm)',
-                        background: 'var(--input-bg)',
-                        border: '1px solid var(--border-subtle)',
-                        color: 'var(--text-primary)',
-                        fontSize: '0.9rem',
-                        fontFamily: 'inherit',
-                        outline: 'none',
-                      }}
-                    >
-                      <option value="WordPress Website">WordPress CMS</option>
-                      <option value="Shopify Ecommerce">Shopify Store</option>
-                      <option value="Local Business Site">Local Biz Site</option>
-                      <option value="Custom Web App">Custom Web App</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '0.4rem' }}>
-                      Estimated Budget
-                    </label>
-                    <select
-                      name="budget"
-                      value={formData.budget}
-                      onChange={handleChange}
-                      style={{
-                        width: '100%',
-                        padding: '0.75rem 0.75rem',
-                        borderRadius: 'var(--radius-sm)',
-                        background: 'var(--input-bg)',
-                        border: '1px solid var(--border-subtle)',
-                        color: 'var(--text-primary)',
-                        fontSize: '0.9rem',
-                        fontFamily: 'inherit',
-                        outline: 'none',
-                      }}
-                    >
-                      <option value="< $1,000">&lt; $1,000</option>
-                      <option value="$1,000 - $3,000">$1,000 - $3,000</option>
-                      <option value="$3,000 - $5,000">$3,000 - $5,000</option>
-                      <option value="$5,000+">$5,000+</option>
-                    </select>
-                  </div>
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '0.4rem' }}>
+                    Project Type
+                  </label>
+                  <select
+                    name="projectType"
+                    value={formData.projectType}
+                    onChange={handleChange}
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem 0.75rem',
+                      borderRadius: 'var(--radius-sm)',
+                      background: 'var(--input-bg)',
+                      border: '1px solid var(--border-subtle)',
+                      color: 'var(--text-primary)',
+                      fontSize: '0.9rem',
+                      fontFamily: 'inherit',
+                      outline: 'none',
+                    }}
+                  >
+                    <option value="Website (including E-commerce)">Website (including E-commerce)</option>
+                    <option value="Mobile App">Mobile App</option>
+                    <option value="Website and Mobile App">Website and Mobile App</option>
+                    <option value="Landing Page">Landing Page</option>
+                  </select>
                 </div>
 
                 <div>
@@ -319,12 +266,13 @@ export default function ContactHubspot() {
                   className="btn-primary"
                   style={{ width: '100%', padding: '0.85rem', fontSize: '1rem', gap: '0.5rem' }}
                 >
-                  {status.submitting ? 'Sending to HubSpot CRM...' : 'Submit Inquiry'}
+                  {status.submitting ? 'Submitting...' : 'Submit Inquiry'}
                   <Send size={16} />
                 </button>
 
+                {/* Subtle Disclaimer Note */}
                 <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textAlign: 'center' }}>
-                  🔒 Your email is 100% private. Synced to HubSpot CRM.
+                  🔒 Your email is 100% private. Form submissions integrated with HubSpot CRM.
                 </div>
               </form>
             )}

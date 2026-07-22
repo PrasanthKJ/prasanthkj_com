@@ -125,7 +125,7 @@ export default function Footer() {
                   }}
                 >
                   <Calendar size={14} />
-                  Book 15-Min Meeting (Calendly)
+                  Book 15-Min Meeting
                 </a>
               </li>
               <li>
@@ -144,7 +144,7 @@ export default function Footer() {
                   }}
                 >
                   <Globe size={14} />
-                  WordPress Blog (prasanthkj.com/blog)
+                  WordPress Blog
                 </a>
               </li>
               <li>
@@ -163,12 +163,12 @@ export default function Footer() {
                   }}
                 >
                   <Code2 size={14} />
-                  Technical Blog (hash.prasanthkj.com)
+                  Technical Developer Blog
                 </a>
               </li>
               <li>
                 <a href="#contact" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem' }}>
-                  Contact & HubSpot Inquiry
+                  Contact & Project Inquiry
                 </a>
               </li>
             </ul>
@@ -198,8 +198,8 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '6px' }}
                 >
-                  <TwitterIcon size={16} color="#1da1f2" />
-                  <span>Twitter / X</span>
+                  <TwitterIcon size={16} color="var(--text-primary)" />
+                  <span>X (formerly Twitter)</span>
                 </a>
               </li>
               <li>
@@ -258,7 +258,7 @@ export default function Footer() {
             © {currentYear} Prasanth KJ (prasanthkj.com). All rights reserved.
           </div>
           <div>
-            Design inspired by <span style={{ color: 'var(--text-primary)' }}>jonnyczar.com</span> • Crafted with React & Modern Web Standards
+            Crafted with React & Modern Web Standards
           </div>
         </div>
       </div>

@@ -28,8 +28,8 @@ export default function NewsletterKit() {
         className="glass-card"
         style={{
           padding: 'clamp(1.75rem, 3vw, 2.5rem)',
-          background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(20, 24, 34, 0.85) 100%)',
-          border: '1px solid rgba(16, 185, 129, 0.3)',
+          background: 'var(--pill-emerald-bg)',
+          border: '1px solid rgba(16, 185, 129, 0.25)',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: '2rem',
@@ -42,12 +42,12 @@ export default function NewsletterKit() {
             <span>Kit.com Newsletter</span>
           </div>
 
-          <h3 style={{ fontSize: 'clamp(1.35rem, 2.5vw, 1.75rem)', fontWeight: 800, color: '#ffffff', marginBottom: '0.5rem' }}>
+          <h3 style={{ fontSize: 'clamp(1.35rem, 2.5vw, 1.75rem)', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
             Web Growth Insights for Small Business Owners
           </h3>
 
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.5 }}>
-            Subscribe to get actionable web strategies, WordPress speed optimization tips, and US local SEO tactics delivered straight to your inbox.
+            Subscribe to get actionable web strategies, performance optimization tips, and local SEO tactics delivered straight to your inbox.
           </p>
         </div>
 
@@ -55,14 +55,14 @@ export default function NewsletterKit() {
           {status.subscribed ? (
             <div
               style={{
-                background: 'rgba(16, 185, 129, 0.15)',
+                background: 'var(--pill-emerald-bg)',
                 border: '1px solid rgba(16, 185, 129, 0.4)',
                 borderRadius: 'var(--radius-md)',
                 padding: '1rem 1.25rem',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.75rem',
-                color: '#a7f3d0',
+                color: 'var(--pill-emerald-text)',
                 fontWeight: 600,
                 fontSize: '0.95rem',
               }}
@@ -88,9 +88,9 @@ export default function NewsletterKit() {
                     width: '100%',
                     padding: '0.8rem 1rem 0.8rem 2.75rem',
                     borderRadius: 'var(--radius-full)',
-                    background: 'rgba(255, 255, 255, 0.05)',
+                    background: 'var(--input-bg)',
                     border: '1px solid var(--border-subtle)',
-                    color: '#ffffff',
+                    color: 'var(--text-primary)',
                     fontSize: '0.9rem',
                     fontFamily: 'inherit',
                     outline: 'none',
@@ -106,8 +106,8 @@ export default function NewsletterKit() {
                   background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
                   padding: '0.8rem 1.5rem',
                   fontSize: '0.9rem',
-                  color: '#07080a',
-                  fontWeight: 800,
+                  color: '#ffffff',
+                  fontWeight: 700,
                 }}
               >
                 {status.submitting ? 'Subscribing...' : 'Subscribe'}

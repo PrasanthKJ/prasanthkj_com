@@ -46,7 +46,7 @@
   --ambient-opacity: 0.12;
 
   --gradient-main: linear-gradient(135deg, #0f172a 0%, #334155 50%, #2C5EAD 100%);
-  --sidebar-bg: rgba(255, 255, 255, 0.8);
+  --sidebar-bg: transparent;
   --sidebar-active-bg: rgba(44, 94, 173, 0.12);
 }
 
@@ -96,8 +96,8 @@
   --ambient-opacity: 0.35;
 
   --gradient-main: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #2C5EAD 100%);
-  --sidebar-bg: rgba(20, 24, 34, 0.5);
-  --sidebar-active-bg: rgba(44, 94, 173, 0.18);
+  --sidebar-bg: transparent;
+  --sidebar-active-bg: rgba(44, 94, 173, 0.22);
 }
 
 :root {
@@ -232,6 +232,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--pill-bg);
   border: 1px solid var(--pill-border);
   color: var(--pill-text);
+  white-space: nowrap;
 }
 
 .pill-badge-emerald {
@@ -247,6 +248,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--pill-emerald-bg);
   border: 1px solid rgba(16, 185, 129, 0.25);
   color: var(--pill-emerald-text);
+  white-space: nowrap;
 }
 
 .pill-badge-gold {
@@ -262,6 +264,15 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--pill-gold-bg);
   border: 1px solid rgba(245, 158, 11, 0.3);
   color: var(--pill-gold-text);
+  white-space: nowrap;
+}
+
+/* Sidebar Active Link Style for Dark Mode Luminous Text Glow Effect */
+[data-theme="dark"] .sidebar-active-glow {
+  font-weight: 800 !important;
+  color: #60a5fa !important;
+  text-shadow: 0 0 10px rgba(96, 165, 250, 0.8), 0 0 20px rgba(44, 94, 173, 0.6);
+  box-shadow: -3px 0 12px rgba(96, 165, 250, 0.4);
 }
 
 /* Buttons */

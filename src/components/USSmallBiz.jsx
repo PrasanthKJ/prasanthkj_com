@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { US_SMALL_BIZ_SOLUTIONS, HERO_DATA } from '../data/portfolioData';
-import { CheckCircle2, Calendar, Zap, ShieldCheck, MapPin } from 'lucide-react';
+import { CheckCircle2, Calendar, Zap, ShieldCheck, MapPin, ArrowRight } from 'lucide-react';
 
 export default function USSmallBiz() {
+  const [activeTab, setActiveTab] = useState(0);
+  const activeSolution = US_SMALL_BIZ_SOLUTIONS[activeTab] || US_SMALL_BIZ_SOLUTIONS[0];
+
   return (
     <section id="small-biz" style={{ padding: '80px 0' }}>
       <div
@@ -12,7 +15,8 @@ export default function USSmallBiz() {
           border: '1px solid var(--border-subtle)',
         }}
       >
-        <div style={{ maxWidth: '800px', marginBottom: '3rem' }}>
+        {/* Section Header */}
+        <div style={{ maxWidth: '800px', marginBottom: '2.5rem' }}>
           <div className="pill-badge-emerald" style={{ marginBottom: '1rem', gap: '6px' }}>
             <MapPin size={14} />
             <span>Local Business Web Solutions</span>
@@ -23,78 +27,123 @@ export default function USSmallBiz() {
           </h2>
 
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.6 }}>
-            Whether you run a <strong>lawn mowing service</strong>, <strong>carpet cleaning business</strong>, <strong>plumbing/HVAC service</strong>, or local trade company in the US or globally, I build turnkey WordPress & Shopify websites designed to rank high in local search results and convert visitors into paying phone calls.
+            Turn casual visitors into phone calls and monthly bookings. Select your industry below to explore tailored web solutions:
           </p>
         </div>
 
-        {/* Solutions Grid */}
+        {/* Industry Selector Tabs */}
         <div
           style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '0.75rem',
+            marginBottom: '2.5rem',
+            paddingBottom: '1rem',
+            borderBottom: '1px solid var(--border-subtle)',
+          }}
+        >
+          {US_SMALL_BIZ_SOLUTIONS.map((item, idx) => {
+            const isSelected = activeTab === idx;
+            return (
+              <button
+                key={item.id}
+                onClick={() => setActiveTab(idx)}
+                style={{
+                  padding: '0.75rem 1.25rem',
+                  borderRadius: 'var(--radius-full)',
+                  border: isSelected ? '1px solid var(--accent-purple)' : '1px solid var(--border-subtle)',
+                  background: isSelected ? 'var(--pill-bg)' : 'var(--btn-sec-bg)',
+                  color: isSelected ? 'var(--accent-purple)' : 'var(--text-secondary)',
+                  fontWeight: isSelected ? 700 : 500,
+                  fontSize: '0.925rem',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                }}
+              >
+                <span>{item.title}</span>
+                {isSelected && <ArrowRight size={14} />}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Interactive Industry Showcase Panel */}
+        <div
+          style={{
+            background: 'var(--btn-sec-bg)',
+            borderRadius: 'var(--radius-md)',
+            padding: 'clamp(1.5rem, 3vw, 2.5rem)',
+            border: '1px solid var(--border-subtle)',
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '1.75rem',
+            gap: '2rem',
+            alignItems: 'center',
             marginBottom: '3rem',
           }}
         >
-          {US_SMALL_BIZ_SOLUTIONS.map((item) => (
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
+              <span className="pill-badge-gold" style={{ fontSize: '0.75rem' }}>
+                {activeSolution.tag}
+              </span>
+              <span className="pill-badge-emerald" style={{ fontSize: '0.75rem' }}>
+                {activeSolution.impact}
+              </span>
+            </div>
+
+            <h3 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 800, marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+              {activeSolution.title}
+            </h3>
+
+            <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', marginBottom: '1.5rem', fontWeight: 500 }}>
+              {activeSolution.subtitle}
+            </p>
+
             <div
-              key={item.id}
               style={{
-                background: 'var(--btn-sec-bg)',
-                borderRadius: 'var(--radius-md)',
-                padding: '1.75rem',
-                border: '1px solid var(--border-subtle)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                color: 'var(--accent-purple)',
+                fontWeight: 600,
+                fontSize: '0.9rem',
               }}
             >
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-                  <span className="pill-badge-gold" style={{ fontSize: '0.75rem' }}>
-                    {item.tag}
-                  </span>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--accent-emerald)', fontWeight: 700 }}>
-                    {item.impact}
-                  </span>
-                </div>
-
-                <h3 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
-                  {item.title}
-                </h3>
-
-                <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '1.25rem', fontWeight: 500 }}>
-                  {item.subtitle}
-                </p>
-
-                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {item.features.map((feat, idx) => (
-                    <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                      <CheckCircle2 size={16} color="var(--accent-emerald)" style={{ marginTop: '3px', flexShrink: 0 }} />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div
-                style={{
-                  marginTop: '1.5rem',
-                  paddingTop: '1rem',
-                  borderTop: '1px solid var(--border-subtle)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  color: 'var(--accent-purple)',
-                  fontWeight: 600,
-                  fontSize: '0.875rem',
-                }}
-              >
-                <Zap size={16} />
-                <span>Local SEO & Microdata Schema Included</span>
-              </div>
+              <Zap size={16} />
+              <span>Includes Local Schema & Mobile Call Engine</span>
             </div>
-          ))}
+          </div>
+
+          <div>
+            <h4 style={{ fontSize: '0.95rem', fontWeight: 700, textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '1rem', letterSpacing: '0.05em' }}>
+              Key Included Features & Capabilities:
+            </h4>
+
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+              {activeSolution.features.map((feat, idx) => (
+                <li
+                  key={idx}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '0.75rem',
+                    fontSize: '0.95rem',
+                    color: 'var(--text-secondary)',
+                    background: 'var(--bg-card)',
+                    padding: '0.75rem 1rem',
+                    borderRadius: 'var(--radius-sm)',
+                    border: '1px solid var(--border-subtle)',
+                  }}
+                >
+                  <CheckCircle2 size={18} color="var(--accent-emerald)" style={{ marginTop: '2px', flexShrink: 0 }} />
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Local Business Guarantee Banner */}
