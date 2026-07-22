@@ -144,7 +144,7 @@ export default function Footer() {
                   }}
                 >
                   <Globe size={14} />
-                  WordPress Blog
+                  Personal Blog
                 </a>
               </li>
               <li>
