@@ -9,7 +9,7 @@ export default function Projects() {
         <div className="pill-badge" style={{ marginBottom: '0.75rem' }}>
           Portfolio Showcase
         </div>
-        <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 800, marginBottom: '0.75rem' }}>
+        <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 800, marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
           Delivered Client Works & Case Studies
         </h2>
         <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '700px' }}>
@@ -26,8 +26,6 @@ export default function Projects() {
               padding: 'clamp(1.75rem, 3vw, 2.75rem)',
               position: 'relative',
               overflow: 'hidden',
-              background: `linear-gradient(135deg, rgba(20, 24, 34, 0.8) 0%, rgba(13, 15, 20, 0.9) 100%)`,
-              border: `1px solid rgba(255, 255, 255, 0.08)`,
             }}
           >
             {/* Background Ambient Glow per Card */}
@@ -60,20 +58,20 @@ export default function Projects() {
                     {project.category}
                   </span>
 
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.85rem', color: '#fcd34d', fontWeight: 600 }}>
-                    <Star size={14} fill="#f59e0b" color="#f59e0b" />
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.85rem', color: 'var(--pill-gold-text)', fontWeight: 600 }}>
+                    <Star size={14} fill="var(--accent-gold)" color="var(--accent-gold)" />
                     {project.metrics.rating}
                   </span>
                 </div>
 
-                <h3 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)', fontWeight: 800, marginBottom: '0.5rem', color: '#ffffff' }}>
+                <h3 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
                   {project.title}
                 </h3>
 
                 <a
                   href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={project.url.startsWith('http') ? '_blank' : '_self'}
+                  rel={project.url.startsWith('http') ? 'noopener noreferrer' : ''}
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -87,7 +85,7 @@ export default function Projects() {
                 >
                   <Globe size={16} />
                   <span>{project.displayUrl}</span>
-                  <ExternalLink size={14} />
+                  {project.url.startsWith('http') && <ExternalLink size={14} />}
                 </a>
 
                 <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.6, maxWidth: '850px', marginBottom: '1.75rem' }}>
@@ -102,8 +100,8 @@ export default function Projects() {
                       style={{
                         padding: '0.3rem 0.75rem',
                         borderRadius: 'var(--radius-sm)',
-                        background: 'rgba(255, 255, 255, 0.04)',
-                        border: '1px solid rgba(255, 255, 255, 0.08)',
+                        background: 'var(--btn-sec-bg)',
+                        border: '1px solid var(--border-subtle)',
                         fontSize: '0.825rem',
                         fontWeight: 600,
                         color: 'var(--text-secondary)',
@@ -119,8 +117,8 @@ export default function Projects() {
               <div>
                 <a
                   href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={project.url.startsWith('http') ? '_blank' : '_self'}
+                  rel={project.url.startsWith('http') ? 'noopener noreferrer' : ''}
                   className="btn-secondary"
                   style={{
                     padding: '0.75rem 1.25rem',
@@ -128,7 +126,7 @@ export default function Projects() {
                     whiteSpace: 'nowrap',
                   }}
                 >
-                  Visit Live Site
+                  View Case Details
                   <ArrowUpRight size={16} />
                 </a>
               </div>
@@ -139,7 +137,7 @@ export default function Projects() {
               style={{
                 marginTop: '1rem',
                 paddingTop: '1.25rem',
-                borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+                borderTop: '1px solid var(--border-subtle)',
                 display: 'flex',
                 flexWrap: 'wrap',
                 alignItems: 'center',

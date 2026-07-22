@@ -1,6 +1,6 @@
 import React from 'react';
-import { AGENCY_WORKFLOW } from '../data/portfolioData';
-import { ShieldCheck, CheckCircle2, Workflow, ArrowRight } from 'lucide-react';
+import { AGENCY_WORKFLOW, HERO_DATA } from '../data/portfolioData';
+import { ShieldCheck, CheckCircle2, Workflow, Calendar } from 'lucide-react';
 
 export default function AgencyWorkflow() {
   return (
@@ -10,7 +10,7 @@ export default function AgencyWorkflow() {
           <Workflow size={14} />
           <span>Agency Standard Model</span>
         </div>
-        <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 800, marginBottom: '1rem' }}>
+        <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 800, marginBottom: '1rem', color: 'var(--text-primary)' }}>
           Structured 5-Step Agency Workflow for 100% Client Peace of Mind
         </h2>
         <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.6 }}>
@@ -67,7 +67,7 @@ export default function AgencyWorkflow() {
                     textTransform: 'uppercase',
                     letterSpacing: '0.05em',
                     color: 'var(--accent-emerald)',
-                    background: 'rgba(16, 185, 129, 0.1)',
+                    background: 'var(--pill-emerald-bg)',
                     padding: '0.25rem 0.6rem',
                     borderRadius: 'var(--radius-full)',
                   }}
@@ -76,7 +76,7 @@ export default function AgencyWorkflow() {
                 </span>
               </div>
 
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '0.75rem', color: '#ffffff' }}>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
                 {item.title}
               </h3>
 
@@ -109,8 +109,8 @@ export default function AgencyWorkflow() {
           marginTop: '3rem',
           padding: '1.75rem',
           borderRadius: 'var(--radius-md)',
-          background: 'rgba(44, 94, 173, 0.08)',
-          border: '1px solid rgba(44, 94, 173, 0.25)',
+          background: 'var(--pill-bg)',
+          border: '1px solid var(--pill-border)',
           display: 'flex',
           flexWrap: 'wrap',
           alignItems: 'center',
@@ -121,7 +121,7 @@ export default function AgencyWorkflow() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <ShieldCheck size={32} color="var(--accent-purple)" />
           <div>
-            <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#ffffff' }}>
+            <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-primary)' }}>
               Clear Milestone Agreements & Weekly Progress Demos
             </h4>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
@@ -130,9 +130,14 @@ export default function AgencyWorkflow() {
           </div>
         </div>
 
-        <a href="#contact" className="btn-primary">
-          Schedule A Discovery Call
-          <ArrowRight size={16} />
+        <a
+          href={HERO_DATA.calendlyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary"
+        >
+          <Calendar size={16} />
+          Schedule A 15-Min Call
         </a>
       </div>
     </section>

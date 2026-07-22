@@ -7,7 +7,7 @@ export default function SidebarNav() {
   const sections = [
     { id: 'hero', label: 'Overview', icon: Layers },
     { id: 'highlights', label: 'Highlights', icon: Award },
-    { id: 'small-biz', label: 'US Biz Solutions', icon: Briefcase },
+    { id: 'small-biz', label: 'Local Biz Solutions', icon: Briefcase },
     { id: 'works', label: 'Client Works', icon: CheckCircle2 },
     { id: 'workflow', label: 'Agency Workflow', icon: Workflow },
     { id: 'testimonials', label: 'Client Trust', icon: Star },
@@ -51,14 +51,12 @@ export default function SidebarNav() {
     >
       <div
         style={{
-          background: 'rgba(20, 24, 34, 0.5)',
-          backdropFilter: 'blur(12px)',
-          border: '1px solid var(--border-subtle)',
-          borderRadius: 'var(--radius-lg)',
-          padding: '1.25rem 1rem',
+          background: 'transparent',
+          border: 'none',
+          padding: '0.5rem 0',
           display: 'flex',
           flexDirection: 'column',
-          gap: '0.5rem',
+          gap: '0.4rem',
         }}
       >
         <div
@@ -87,13 +85,13 @@ export default function SidebarNav() {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '0.75rem',
-                padding: '0.5rem 0.75rem',
+                padding: '0.55rem 0.85rem',
                 borderRadius: 'var(--radius-sm)',
                 textDecoration: 'none',
-                fontSize: '0.85rem',
+                fontSize: '0.875rem',
                 fontWeight: isActive ? 700 : 500,
-                color: isActive ? '#ffffff' : 'var(--text-secondary)',
-                background: isActive ? 'rgba(44, 94, 173, 0.18)' : 'transparent',
+                color: isActive ? 'var(--accent-purple)' : 'var(--text-secondary)',
+                background: isActive ? 'var(--sidebar-active-bg)' : 'transparent',
                 borderLeft: isActive ? '3px solid var(--accent-purple)' : '3px solid transparent',
                 transition: 'all 0.2s ease',
               }}

@@ -3,9 +3,10 @@
 export const HERO_DATA = {
   name: "Prasanth KJ",
   role: "WordPress CMS & Shopify Specialist | Web Developer",
-  tagline: "Building High-Converting Websites & Custom Web Solutions for US Small Businesses & Global Agencies",
+  tagline: "Building High-Converting Websites & Custom Web Solutions for Global Businesses & Growing Agencies",
   location: "Global Freelancer | Serving US, UK & Worldwide Clients",
   email: "hello@prasanthkj.com",
+  calendlyUrl: "https://calendly.com/prasanthkj/15min",
   socials: {
     facebook: "https://facebook.com/theprasanthkj",
     x: "https://x.com/theprasanthkj",
@@ -40,9 +41,9 @@ export const HIGHLIGHTS = [
   },
   {
     id: 3,
-    badge: "US Market Focused",
-    title: "US Small Business Specialist",
-    description: "Tailored lead-generation sites for US service businesses (lawn care, carpet cleaning, HVAC, trade contractors).",
+    badge: "Local Business Growth",
+    title: "Service Business Specialist",
+    description: "High-ROI lead generation sites for local service businesses (lawn care, carpet cleaning, HVAC, trade contractors).",
     icon: "Target",
     color: "purple"
   },
@@ -62,7 +63,7 @@ export const US_SMALL_BIZ_SOLUTIONS = [
     title: "Lawn Mowing & Landscaping Services",
     subtitle: "Turn Local Searchers into Monthly Retainer Customers",
     features: [
-      "Instant Online Instant-Quote & Booking Form",
+      "Instant Online Quote & Service Booking Form",
       "Localized Google Map SEO & City-Page Targeting",
       "Before/After Photo Gallery & Customer Reviews",
       "Mobile Click-to-Call & Click-to-Text Buttons"
@@ -86,27 +87,27 @@ export const US_SMALL_BIZ_SOLUTIONS = [
   {
     id: "local-contractors",
     title: "HVAC, Plumbing & Home Service Contractors",
-    subtitle: "Build 100% Trust with Homeowners in your Zip Code",
+    subtitle: "Build 100% Trust with Local Homeowners & Property Owners",
     features: [
       "Emergency 24/7 Dispatch Contact Bar",
       "License, Insurance & Verified Badges Showcase",
       "Financing Options & Estimate Request Forms",
       "Speed Optimized (Loads in under 1.2s on 4G)"
     ],
-    tag: "US Zip Code Local SEO",
+    tag: "Local Service SEO",
     impact: "+250% Mobile Phone Leads"
   }
 ];
 
 export const FEATURED_PROJECTS = [
   {
-    id: "gulfkeyventures",
-    title: "Gulfkey Ventures",
-    category: "Hotel Booking & Luxury Hospitality Platform",
-    url: "https://www.gulfkeyventures.com",
-    displayUrl: "www.gulfkeyventures.com",
-    description: "Custom hotel reservation system with real-time room availability, luxury aesthetic design system, multi-currency booking flow, and mobile-first responsive architecture.",
-    techStack: ["WordPress CMS", "Custom Booking Engine", "WooCommerce / Payment Gateway", "Speed Optimization"],
+    id: "florida-hotel-booking",
+    title: "Florida Hotel & Vacation Rental System",
+    category: "Hospitality & Short-Term Rental Platform",
+    url: "#contact",
+    displayUrl: "Florida Vacation Rental Platform",
+    description: "Custom hotel reservation system and short-term rental booking engine built for a Florida hospitality property. Features 2-way real-time calendar synchronization with Airbnb & VRBO, automated dynamic rate management via PriceLabs API, and a frictionless direct booking checkout flow.",
+    techStack: ["WordPress / Custom CMS", "Airbnb & VRBO 2-Way Sync", "PriceLabs Dynamic Pricing API", "Stripe / Booking Funnel"],
     metrics: {
       rating: "5.0 ★★★★★",
       result: "+140% Direct Bookings",
@@ -141,7 +142,7 @@ export const FEATURED_PROJECTS = [
     techStack: ["WordPress CMS", "Custom Affiliate Schema", "AdSense & Affiliate API", "Core Web Vitals Optimized"],
     metrics: {
       rating: "5.0 ★★★★★",
-      result: "50K+ Monthly Organic Visits",
+      result: "100% Core Web Vitals Pass",
       speed: "99/100 PageSpeed"
     },
     badgeColor: "purple",
@@ -153,13 +154,13 @@ export const AGENCY_WORKFLOW = [
   {
     step: "01",
     title: "Discovery & Goal Mapping",
-    description: "We analyze your business model, target US market audience, competitors, and key conversion metrics before writing a single line of code.",
+    description: "We analyze your business model, target audience, local search competitors, and key conversion metrics before writing a single line of code.",
     deliverables: ["Project Scope Blueprint", "Competitor SEO Analysis", "Wireframe Skeleton"]
   },
   {
     step: "02",
     title: "UI/UX & Brand Architecture",
-    description: "We craft stunning, modern UI designs inspired by world-class web standards (clean typography, glassmorphism, responsive visual hierarchy).",
+    description: "We craft stunning, modern UI designs inspired by world-class web standards (clean typography, responsive layout, intuitive visual hierarchy).",
     deliverables: ["Interactive Prototype", "High-Converting Landing Pages", "Design Tokens System"]
   },
   {
@@ -185,11 +186,11 @@ export const AGENCY_WORKFLOW = [
 export const TESTIMONIALS = [
   {
     id: 1,
-    client: "US Local Service Agency Owner",
+    client: "Local Service Agency Owner",
     location: "California, USA",
     project: "WordPress Custom Lead Generation Site",
     rating: 5,
-    quote: "Prasanth is hands down the best WordPress freelancer we have worked with. He understood our local US lawn & home service target market instantly. The website loads blazing fast and our inbound leads doubled within 30 days!",
+    quote: "Prasanth is hands down the best WordPress freelancer we have worked with. He understood our local lawn & home service target market instantly. The website loads blazing fast and our inbound leads doubled within 30 days!",
     verified: "Verified Client Review"
   },
   {
@@ -203,11 +204,11 @@ export const TESTIMONIALS = [
   },
   {
     id: 3,
-    client: "Hospitality Group Founder",
-    location: "United Arab Emirates",
-    project: "Hotel Booking System (Gulfkey Ventures)",
+    client: "Hospitality Property Owner",
+    location: "Florida, USA",
+    project: "Florida Hotel & Vacation Rental System",
     rating: 5,
-    quote: "Delivered our hotel booking portal on time and exceeded our expectations. The custom booking logic and mobile UI are smooth and elegant. Will hire again for all our web projects!",
+    quote: "Delivered our hotel reservation portal on time and exceeded our expectations. The Airbnb/VRBO calendar sync and PriceLabs automated pricing logic work flawlessly. Highly recommended!",
     verified: "Verified Client Review"
   }
 ];
@@ -230,10 +231,10 @@ export const TECHNICAL_ARTICLES = {
       summary: "A deep dive into combining Shopify's Storefront API with modern JavaScript frameworks for lightning-fast shopping experiences."
     },
     {
-      title: "Local Business Schema.org & Lead Funnel Architecture for US Market",
+      title: "Local Business Schema.org & Lead Funnel Architecture for Search Ranking",
       tag: "SEO & Conversion",
       readTime: "4 min read",
-      summary: "Structuring microdata schemas and click-to-call conversion flows to dominate local search results in US zip codes."
+      summary: "Structuring microdata schemas and click-to-call conversion flows to dominate local search engine results."
     }
   ]
 };

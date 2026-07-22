@@ -1,6 +1,6 @@
 import React from 'react';
 import { HERO_DATA } from '../data/portfolioData';
-import { Award, Mail, Code2, Globe } from 'lucide-react';
+import { Award, Mail, Code2, Globe, Calendar } from 'lucide-react';
 import { FacebookIcon, TwitterIcon, LinkedinIcon } from './SocialIcons';
 
 export default function Footer() {
@@ -52,13 +52,13 @@ export default function Footer() {
               >
                 PK
               </div>
-              <span style={{ fontSize: '1.35rem', fontWeight: 800, color: '#ffffff', fontFamily: 'var(--font-heading)' }}>
+              <span style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--text-primary)', fontFamily: 'var(--font-heading)' }}>
                 Prasanth KJ
               </span>
             </div>
 
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.925rem', lineHeight: 1.6, maxWidth: '440px', marginBottom: '1.25rem' }}>
-              Expert <strong>WordPress freelancer</strong> and <strong>website freelancer</strong> helping US small business owners, e-commerce brands, and agencies build fast, high-converting websites.
+              Expert <strong>WordPress freelancer</strong> and <strong>website freelancer</strong> helping small business owners, e-commerce brands, and global agencies build fast, high-converting websites.
             </p>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -71,7 +71,7 @@ export default function Footer() {
 
           {/* Navigation Column */}
           <div>
-            <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#ffffff', marginBottom: '1rem' }}>
+            <h4 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '1rem' }}>
               Quick Navigation
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
@@ -82,7 +82,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#small-biz" style={{ color: 'var(--text-secondary)', textDecoration: 'none', fontSize: '0.9rem' }}>
-                  US Small Biz Solutions
+                  Local Service Solutions
                 </a>
               </li>
               <li>
@@ -105,10 +105,29 @@ export default function Footer() {
 
           {/* Blogs & Resources Column */}
           <div>
-            <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#ffffff', marginBottom: '1rem' }}>
-              Blogs & Resources
+            <h4 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '1rem' }}>
+              Blogs & Scheduling
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+              <li>
+                <a
+                  href={HERO_DATA.calendlyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: 'var(--accent-purple)',
+                    textDecoration: 'none',
+                    fontSize: '0.9rem',
+                    fontWeight: 700,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                  }}
+                >
+                  <Calendar size={14} />
+                  Book 15-Min Meeting (Calendly)
+                </a>
+              </li>
               <li>
                 <a
                   href={HERO_DATA.blogUrl}
@@ -157,7 +176,7 @@ export default function Footer() {
 
           {/* Social Profiles Column */}
           <div>
-            <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#ffffff', marginBottom: '1rem' }}>
+            <h4 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '1rem' }}>
               Direct Social Links
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -211,8 +230,8 @@ export default function Footer() {
         <div
           style={{
             padding: '1.25rem 0',
-            borderTop: '1px solid rgba(255, 255, 255, 0.05)',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+            borderTop: '1px solid var(--border-subtle)',
+            borderBottom: '1px solid var(--border-subtle)',
             marginBottom: '1.5rem',
             fontSize: '0.8rem',
             color: 'var(--text-muted)',
@@ -220,7 +239,7 @@ export default function Footer() {
             lineHeight: 1.6,
           }}
         >
-          <strong>Prasanth KJ</strong> • Professional <strong>WordPress Freelancer</strong> & <strong>Website Freelancer</strong> • Specialized <strong>Shopify Freelancer</strong> and <strong>Web Developer</strong> for US small business owners, local service providers, e-commerce stores & global agency partners.
+          <strong>Prasanth KJ</strong> • Professional <strong>WordPress Freelancer</strong> & <strong>Website Freelancer</strong> • Specialized <strong>Shopify Freelancer</strong> and <strong>Web Developer</strong> for small business owners, local service providers, e-commerce stores & global agency partners.
         </div>
 
         {/* Copyright Bar */}
@@ -239,7 +258,7 @@ export default function Footer() {
             © {currentYear} Prasanth KJ (prasanthkj.com). All rights reserved.
           </div>
           <div>
-            Design inspired by <span style={{ color: '#ffffff' }}>jonnyczar.com</span> • Crafted with React & Modern Web Standards
+            Design inspired by <span style={{ color: 'var(--text-primary)' }}>jonnyczar.com</span> • Crafted with React & Modern Web Standards
           </div>
         </div>
       </div>

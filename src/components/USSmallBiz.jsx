@@ -1,6 +1,6 @@
 import React from 'react';
-import { US_SMALL_BIZ_SOLUTIONS } from '../data/portfolioData';
-import { CheckCircle2, PhoneCall, Zap, ShieldCheck, MapPin } from 'lucide-react';
+import { US_SMALL_BIZ_SOLUTIONS, HERO_DATA } from '../data/portfolioData';
+import { CheckCircle2, Calendar, Zap, ShieldCheck, MapPin } from 'lucide-react';
 
 export default function USSmallBiz() {
   return (
@@ -9,23 +9,21 @@ export default function USSmallBiz() {
         className="glass-card"
         style={{
           padding: 'clamp(2rem, 4vw, 3.5rem)',
-          background: 'linear-gradient(135deg, rgba(20, 24, 34, 0.9) 0%, rgba(13, 15, 20, 0.95) 100%)',
-          border: '1px solid rgba(44, 94, 173, 0.2)',
-          boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5)',
+          border: '1px solid var(--border-subtle)',
         }}
       >
         <div style={{ maxWidth: '800px', marginBottom: '3rem' }}>
           <div className="pill-badge-emerald" style={{ marginBottom: '1rem', gap: '6px' }}>
             <MapPin size={14} />
-            <span>US Small Business Websites</span>
+            <span>Local Business Web Solutions</span>
           </div>
 
-          <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 800, marginBottom: '1rem', lineHeight: 1.2 }}>
-            High-Converting Websites Engineered for <span className="gradient-text-emerald">US Local Service Businesses</span>
+          <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 800, marginBottom: '1rem', lineHeight: 1.2, color: 'var(--text-primary)' }}>
+            High-Converting Websites Engineered for <span className="gradient-text-emerald">Local Service Businesses</span>
           </h2>
 
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.6 }}>
-            Are you a local business owner in the United States running a <strong>lawn mowing service</strong>, <strong>carpet cleaning business</strong>, <strong>plumbing/HVAC service</strong>, or home service company? I build turnkey WordPress & Shopify websites designed to rank high in local searches and turn visitors into paying phone calls.
+            Whether you run a <strong>lawn mowing service</strong>, <strong>carpet cleaning business</strong>, <strong>plumbing/HVAC service</strong>, or local trade company in the US or globally, I build turnkey WordPress & Shopify websites designed to rank high in local search results and convert visitors into paying phone calls.
           </p>
         </div>
 
@@ -42,10 +40,10 @@ export default function USSmallBiz() {
             <div
               key={item.id}
               style={{
-                background: 'rgba(255, 255, 255, 0.03)',
+                background: 'var(--btn-sec-bg)',
                 borderRadius: 'var(--radius-md)',
                 padding: '1.75rem',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
+                border: '1px solid var(--border-subtle)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -61,7 +59,7 @@ export default function USSmallBiz() {
                   </span>
                 </div>
 
-                <h3 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: '0.5rem', color: '#ffffff' }}>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
                   {item.title}
                 </h3>
 
@@ -83,7 +81,7 @@ export default function USSmallBiz() {
                 style={{
                   marginTop: '1.5rem',
                   paddingTop: '1rem',
-                  borderTop: '1px solid rgba(255, 255, 255, 0.05)',
+                  borderTop: '1px solid var(--border-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.5rem',
@@ -93,7 +91,7 @@ export default function USSmallBiz() {
                 }}
               >
                 <Zap size={16} />
-                <span>US Zip Code Local SEO Included</span>
+                <span>Local SEO & Microdata Schema Included</span>
               </div>
             </div>
           ))}
@@ -102,7 +100,7 @@ export default function USSmallBiz() {
         {/* Local Business Guarantee Banner */}
         <div
           style={{
-            background: 'rgba(16, 185, 129, 0.08)',
+            background: 'var(--pill-emerald-bg)',
             border: '1px solid rgba(16, 185, 129, 0.25)',
             borderRadius: 'var(--radius-md)',
             padding: '1.5rem',
@@ -130,18 +128,24 @@ export default function USSmallBiz() {
               <ShieldCheck size={26} />
             </div>
             <div>
-              <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#ffffff' }}>
+              <h4 style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-primary)' }}>
                 100% Mobile Optimized & Click-To-Call Ready
               </h4>
-              <p style={{ fontSize: '0.875rem', color: '#a7f3d0' }}>
-                Over 78% of US service calls originate on mobile devices. Your website will be fast, secure, and ready to capture leads.
+              <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
+                Over 78% of local service inquiries originate on mobile devices. Your website will be fast, secure, and ready to capture leads.
               </p>
             </div>
           </div>
 
-          <a href="#contact" className="btn-primary" style={{ background: 'var(--accent-emerald)', color: '#07080a', fontWeight: 800 }}>
-            <PhoneCall size={16} />
-            Request US Biz Demo
+          <a
+            href={HERO_DATA.calendlyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+            style={{ background: 'var(--accent-emerald)', color: '#ffffff', fontWeight: 800 }}
+          >
+            <Calendar size={16} />
+            Schedule Free Strategy Call
           </a>
         </div>
       </div>

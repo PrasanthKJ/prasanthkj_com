@@ -9,8 +9,7 @@ export default function TechnicalBlog() {
         className="glass-card"
         style={{
           padding: 'clamp(2rem, 4vw, 3.5rem)',
-          background: 'linear-gradient(135deg, rgba(13, 15, 20, 0.95) 0%, rgba(20, 24, 34, 0.85) 100%)',
-          border: '1px solid rgba(6, 182, 212, 0.25)',
+          border: '1px solid var(--border-subtle)',
           position: 'relative',
           overflow: 'hidden',
         }}
@@ -32,12 +31,12 @@ export default function TechnicalBlog() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '1.5rem', alignItems: 'flex-start', marginBottom: '2.5rem' }}>
           <div>
-            <div className="pill-badge-emerald" style={{ marginBottom: '0.75rem', gap: '6px', background: 'rgba(6, 182, 212, 0.12)', border: '1px solid rgba(6, 182, 212, 0.3)', color: '#67e8f9' }}>
+            <div className="pill-badge-emerald" style={{ marginBottom: '0.75rem', gap: '6px', background: 'rgba(6, 182, 212, 0.12)', border: '1px solid rgba(6, 182, 212, 0.3)', color: 'var(--accent-cyan)' }}>
               <Code2 size={14} />
               <span>Developer's Corner & Engineering Blog</span>
             </div>
 
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 800, color: '#ffffff', marginBottom: '0.75rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '0.75rem' }}>
               Technical Engineering Notes & Code Breakdown
             </h2>
 
@@ -62,7 +61,6 @@ export default function TechnicalBlog() {
               className="btn-secondary"
               style={{
                 borderColor: 'rgba(6, 182, 212, 0.4)',
-                color: '#ffffff',
                 padding: '0.75rem 1.25rem',
               }}
             >
@@ -91,10 +89,10 @@ export default function TechnicalBlog() {
             >
               <div
                 style={{
-                  background: 'rgba(255, 255, 255, 0.03)',
+                  background: 'var(--btn-sec-bg)',
                   borderRadius: 'var(--radius-md)',
                   padding: '1.5rem',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  border: '1px solid var(--border-subtle)',
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
@@ -107,12 +105,12 @@ export default function TechnicalBlog() {
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                  e.currentTarget.style.borderColor = 'var(--border-subtle)';
                 }}
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent-cyan)', uppercase: 'true' }}>
+                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent-cyan)', textTransform: 'uppercase' }}>
                       {art.tag}
                     </span>
                     <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
@@ -120,7 +118,7 @@ export default function TechnicalBlog() {
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#ffffff', marginBottom: '0.75rem', lineHeight: 1.4 }}>
+                  <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.75rem', lineHeight: 1.4 }}>
                     {art.title}
                   </h3>
 

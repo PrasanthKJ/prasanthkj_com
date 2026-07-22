@@ -10,7 +10,7 @@ export default function Testimonials() {
           <Award size={14} />
           <span>Client Reviews & Social Proof</span>
         </div>
-        <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 800, marginBottom: '1rem' }}>
+        <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 800, marginBottom: '1rem', color: 'var(--text-primary)' }}>
           What Verified Clients Say About Working With Prasanth KJ
         </h2>
         <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.6 }}>
@@ -42,7 +42,7 @@ export default function Testimonials() {
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
                 <div style={{ display: 'flex', gap: '3px' }}>
                   {[...Array(item.rating)].map((_, i) => (
-                    <Star key={i} size={16} fill="#f59e0b" color="#f59e0b" />
+                    <Star key={i} size={16} fill="var(--accent-gold)" color="var(--accent-gold)" />
                   ))}
                 </div>
 
@@ -50,8 +50,8 @@ export default function Testimonials() {
                   style={{
                     fontSize: '0.75rem',
                     fontWeight: 700,
-                    color: 'var(--accent-emerald)',
-                    background: 'rgba(16, 185, 129, 0.1)',
+                    color: 'var(--pill-emerald-text)',
+                    background: 'var(--pill-emerald-bg)',
                     padding: '0.2rem 0.6rem',
                     borderRadius: 'var(--radius-full)',
                     display: 'flex',
@@ -67,7 +67,7 @@ export default function Testimonials() {
               {/* Quote text */}
               <p
                 style={{
-                  color: '#e2e8f0',
+                  color: 'var(--text-secondary)',
                   fontSize: '1rem',
                   lineHeight: 1.6,
                   fontStyle: 'italic',
@@ -79,8 +79,8 @@ export default function Testimonials() {
               </p>
             </div>
 
-            <div style={{ paddingTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.06)' }}>
-              <div style={{ fontWeight: 700, fontSize: '1rem', color: '#ffffff' }}>
+            <div style={{ paddingTop: '1rem', borderTop: '1px solid var(--border-subtle)' }}>
+              <div style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--text-primary)' }}>
                 {item.client}
               </div>
               <div style={{ fontSize: '0.85rem', color: 'var(--accent-purple)', fontWeight: 600 }}>

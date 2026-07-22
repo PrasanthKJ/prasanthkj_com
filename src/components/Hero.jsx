@@ -1,6 +1,6 @@
 import React from 'react';
 import { HERO_DATA } from '../data/portfolioData';
-import { Award, ArrowRight, CheckCircle, Mail, ExternalLink } from 'lucide-react';
+import { Award, ArrowRight, CheckCircle, Mail, ExternalLink, Calendar } from 'lucide-react';
 import { FacebookIcon, TwitterIcon, LinkedinIcon } from './SocialIcons';
 
 export default function Hero() {
@@ -21,14 +21,14 @@ export default function Hero() {
         {/* Top Trust Status Pill */}
         <div style={{ marginBottom: '1.5rem', display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center' }}>
           <div className="pill-badge-gold" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-            <Award size={16} color="#f59e0b" />
+            <Award size={16} color="var(--pill-gold-text)" />
             <span>{HERO_DATA.upworkStatus.title}</span>
             <span style={{ opacity: 0.6 }}>•</span>
             <span>{HERO_DATA.upworkStatus.rating}</span>
           </div>
 
           <div className="pill-badge-emerald" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-            <CheckCircle size={14} color="#10b981" />
+            <CheckCircle size={14} color="var(--accent-emerald)" />
             <span>{HERO_DATA.upworkStatus.successRate}</span>
           </div>
         </div>
@@ -43,9 +43,10 @@ export default function Hero() {
             fontFamily: 'var(--font-heading)',
             letterSpacing: '-0.03em',
             maxWidth: '900px',
+            color: 'var(--text-primary)',
           }}
         >
-          Prasanth KJ is a <span className="gradient-text">Website Developer</span> crafting high-converting WordPress & Shopify sites.
+          I'm a <span className="gradient-text">Website Developer</span> crafting high-converting WordPress & Shopify sites.
         </h1>
 
         {/* Subtitle & Value Proposition */}
@@ -59,7 +60,7 @@ export default function Hero() {
             lineHeight: 1.6,
           }}
         >
-          Specializing in agency-grade web builds, WooCommerce e-commerce, and high-ROI local lead generation websites for <strong style={{ color: '#ffffff' }}>US Small Business Owners</strong> (lawn care, carpet cleaning, local contractors) and global brands.
+          Specializing in agency-grade web builds, WooCommerce e-commerce, and high-ROI local lead generation websites for <strong style={{ color: 'var(--text-primary)' }}>small business owners</strong> (lawn care, carpet cleaning, local contractors) and global brands.
         </p>
 
         {/* Social Icons & Email Row */}
@@ -71,7 +72,7 @@ export default function Hero() {
             gap: '1.25rem',
             marginBottom: '2.5rem',
             padding: '1rem 1.25rem',
-            background: 'rgba(255, 255, 255, 0.03)',
+            background: 'var(--btn-sec-bg)',
             borderRadius: 'var(--radius-md)',
             border: '1px solid var(--border-subtle)',
             maxWidth: 'fit-content',
@@ -129,9 +130,15 @@ export default function Hero() {
 
         {/* Action Call to Action Buttons */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center' }}>
-          <a href="#contact" className="btn-primary" style={{ padding: '0.95rem 2rem', fontSize: '1rem' }}>
-            Start Your Project
-            <ArrowRight size={18} />
+          <a
+            href={HERO_DATA.calendlyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+            style={{ padding: '0.95rem 2rem', fontSize: '1rem' }}
+          >
+            <Calendar size={18} />
+            Book a 15-Min Strategy Call
           </a>
 
           <a href="#works" className="btn-secondary" style={{ padding: '0.95rem 2rem', fontSize: '1rem' }}>

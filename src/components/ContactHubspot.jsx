@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HERO_DATA } from '../data/portfolioData';
-import { Mail, Send, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { Mail, Send, CheckCircle2, ShieldCheck, Calendar } from 'lucide-react';
 
 export default function ContactHubspot() {
   const [formData, setFormData] = useState({
@@ -38,9 +38,7 @@ export default function ContactHubspot() {
         className="glass-card"
         style={{
           padding: 'clamp(2rem, 4vw, 3.5rem)',
-          background: 'linear-gradient(135deg, rgba(20, 24, 34, 0.9) 0%, rgba(13, 15, 20, 0.95) 100%)',
-          border: '1px solid rgba(44, 94, 173, 0.3)',
-          boxShadow: '0 20px 60px rgba(0, 0, 0, 0.6)',
+          border: '1px solid var(--border-subtle)',
         }}
       >
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
@@ -50,12 +48,12 @@ export default function ContactHubspot() {
               Let's Build Together
             </div>
 
-            <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 800, marginBottom: '1rem', lineHeight: 1.2 }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 800, marginBottom: '1rem', lineHeight: 1.2, color: 'var(--text-primary)' }}>
               Ready to Upgrade Your Website & Scale Your Business?
             </h2>
 
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.6, marginBottom: '2rem' }}>
-              Whether you need a brand-new <strong>WordPress site</strong>, a high-converting <strong>Shopify e-commerce store</strong>, or a targeted local lead website for your <strong>US Small Business</strong>, fill out the form and I'll get back to you within 12 hours.
+              Whether you need a brand-new <strong>WordPress site</strong>, a high-converting <strong>Shopify e-commerce store</strong>, or a targeted local lead website for your <strong>Small Business</strong>, fill out the form or schedule a direct meeting on Calendly. I'll respond within 12 hours.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -65,7 +63,7 @@ export default function ContactHubspot() {
                     width: '44px',
                     height: '44px',
                     borderRadius: '12px',
-                    background: 'rgba(16, 185, 129, 0.12)',
+                    background: 'var(--pill-emerald-bg)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -76,7 +74,7 @@ export default function ContactHubspot() {
                 </div>
                 <div>
                   <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600 }}>Direct Email</div>
-                  <a href={`mailto:${HERO_DATA.email}`} style={{ color: '#ffffff', fontWeight: 700, textDecoration: 'none', fontSize: '1rem' }}>
+                  <a href={`mailto:${HERO_DATA.email}`} style={{ color: 'var(--text-primary)', fontWeight: 700, textDecoration: 'none', fontSize: '1rem' }}>
                     hello@prasanthkj.com
                   </a>
                 </div>
@@ -88,7 +86,35 @@ export default function ContactHubspot() {
                     width: '44px',
                     height: '44px',
                     borderRadius: '12px',
-                    background: 'rgba(44, 94, 173, 0.12)',
+                    background: 'var(--pill-bg)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'var(--accent-purple)',
+                  }}
+                >
+                  <Calendar size={20} />
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600 }}>15-Min Meeting</div>
+                  <a
+                    href={HERO_DATA.calendlyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: 'var(--accent-purple)', fontWeight: 700, textDecoration: 'none', fontSize: '0.95rem' }}
+                  >
+                    Book a Call on Calendly →
+                  </a>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <div
+                  style={{
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: '12px',
+                    background: 'var(--pill-bg)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -99,7 +125,7 @@ export default function ContactHubspot() {
                 </div>
                 <div>
                   <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600 }}>HubSpot Integrated Form</div>
-                  <div style={{ color: '#ffffff', fontWeight: 700, fontSize: '0.95rem' }}>
+                  <div style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: '0.95rem' }}>
                     Submissions synced directly to HubSpot CRM
                   </div>
                 </div>
@@ -110,10 +136,10 @@ export default function ContactHubspot() {
           {/* Right Column Form */}
           <div
             style={{
-              background: 'rgba(255, 255, 255, 0.02)',
+              background: 'var(--btn-sec-bg)',
               padding: '2rem',
               borderRadius: 'var(--radius-md)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
+              border: '1px solid var(--border-subtle)',
             }}
           >
             {status.submitted ? (
@@ -132,7 +158,7 @@ export default function ContactHubspot() {
                     width: '64px',
                     height: '64px',
                     borderRadius: '50%',
-                    background: 'rgba(16, 185, 129, 0.2)',
+                    background: 'var(--pill-emerald-bg)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -141,7 +167,7 @@ export default function ContactHubspot() {
                 >
                   <CheckCircle2 size={36} />
                 </div>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#ffffff' }}>Message Received!</h3>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--text-primary)' }}>Message Received!</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
                   Thank you for reaching out. Your inquiry has been logged in HubSpot CRM. Prasanth KJ will respond to your email shortly.
                 </p>
@@ -170,9 +196,9 @@ export default function ContactHubspot() {
                       width: '100%',
                       padding: '0.75rem 1rem',
                       borderRadius: 'var(--radius-sm)',
-                      background: 'rgba(255, 255, 255, 0.05)',
+                      background: 'var(--input-bg)',
                       border: '1px solid var(--border-subtle)',
-                      color: '#ffffff',
+                      color: 'var(--text-primary)',
                       fontSize: '0.95rem',
                       fontFamily: 'inherit',
                       outline: 'none',
@@ -195,9 +221,9 @@ export default function ContactHubspot() {
                       width: '100%',
                       padding: '0.75rem 1rem',
                       borderRadius: 'var(--radius-sm)',
-                      background: 'rgba(255, 255, 255, 0.05)',
+                      background: 'var(--input-bg)',
                       border: '1px solid var(--border-subtle)',
-                      color: '#ffffff',
+                      color: 'var(--text-primary)',
                       fontSize: '0.95rem',
                       fontFamily: 'inherit',
                       outline: 'none',
@@ -218,9 +244,9 @@ export default function ContactHubspot() {
                         width: '100%',
                         padding: '0.75rem 0.75rem',
                         borderRadius: 'var(--radius-sm)',
-                        background: 'rgba(20, 24, 34, 0.95)',
+                        background: 'var(--input-bg)',
                         border: '1px solid var(--border-subtle)',
-                        color: '#ffffff',
+                        color: 'var(--text-primary)',
                         fontSize: '0.9rem',
                         fontFamily: 'inherit',
                         outline: 'none',
@@ -228,7 +254,7 @@ export default function ContactHubspot() {
                     >
                       <option value="WordPress Website">WordPress CMS</option>
                       <option value="Shopify Ecommerce">Shopify Store</option>
-                      <option value="US Local Business Site">US Local Biz Site</option>
+                      <option value="Local Business Site">Local Biz Site</option>
                       <option value="Custom Web App">Custom Web App</option>
                     </select>
                   </div>
@@ -245,9 +271,9 @@ export default function ContactHubspot() {
                         width: '100%',
                         padding: '0.75rem 0.75rem',
                         borderRadius: 'var(--radius-sm)',
-                        background: 'rgba(20, 24, 34, 0.95)',
+                        background: 'var(--input-bg)',
                         border: '1px solid var(--border-subtle)',
-                        color: '#ffffff',
+                        color: 'var(--text-primary)',
                         fontSize: '0.9rem',
                         fontFamily: 'inherit',
                         outline: 'none',
@@ -276,9 +302,9 @@ export default function ContactHubspot() {
                       width: '100%',
                       padding: '0.75rem 1rem',
                       borderRadius: 'var(--radius-sm)',
-                      background: 'rgba(255, 255, 255, 0.05)',
+                      background: 'var(--input-bg)',
                       border: '1px solid var(--border-subtle)',
-                      color: '#ffffff',
+                      color: 'var(--text-primary)',
                       fontSize: '0.95rem',
                       fontFamily: 'inherit',
                       outline: 'none',
