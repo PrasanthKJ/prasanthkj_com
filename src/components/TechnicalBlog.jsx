@@ -14,7 +14,7 @@ export default function TechnicalBlog() {
           overflow: 'hidden',
         }}
       >
-        {/* Glow */}
+        {/* Ambient Glow */}
         <div
           style={{
             position: 'absolute',
@@ -41,15 +41,15 @@ export default function TechnicalBlog() {
             </h2>
 
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', maxWidth: '750px', lineHeight: 1.6 }}>
-              {TECHNICAL_ARTICLES.description} Hosted on Hashnode at{' '}
+              {TECHNICAL_ARTICLES.description} Read full technical write-ups on my{' '}
               <a
                 href={TECHNICAL_ARTICLES.blogUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: 'var(--accent-cyan)', fontWeight: 700, textDecoration: 'none' }}
               >
-                hash.prasanthkj.com
-              </a>
+                Hashnode Engineering Blog
+              </a>.
             </p>
           </div>
 
@@ -76,13 +76,13 @@ export default function TechnicalBlog() {
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             gap: '1.5rem',
-            marginBottom: '2rem',
+            marginBottom: '1rem',
           }}
         >
           {TECHNICAL_ARTICLES.articles.map((art, idx) => (
             <a
               key={idx}
-              href={TECHNICAL_ARTICLES.blogUrl}
+              href={art.url || TECHNICAL_ARTICLES.blogUrl}
               target="_blank"
               rel="noopener noreferrer"
               style={{ textDecoration: 'none' }}

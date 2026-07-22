@@ -215,26 +215,29 @@ export const TESTIMONIALS = [
 
 export const TECHNICAL_ARTICLES = {
   blogUrl: "https://hash.prasanthkj.com",
-  subtitle: "Engineering Notes & Technical Insights on Hashnode",
-  description: "Beyond CMS page builders, I write about custom React JS development, custom WordPress plugin architecture, database optimization, and high-performance frontend engineering.",
+  subtitle: "Engineering Notes & Technical Insights",
+  description: "Beyond CMS page builders, I write about CI/CD deployment pipelines, browser extension development, and modern JavaScript web fundamentals.",
   articles: [
     {
-      title: "Optimizing WordPress Core Web Vitals for 99+ PageSpeed Scores",
-      tag: "WordPress Engineering",
-      readTime: "5 min read",
-      summary: "How to strip bloat, optimize asset loading, defer scripts, and implement server-level caching without breaking site functionality."
+      title: "Using Buddy.Works to Automate React Deployment on Shared Hosting",
+      tag: "React & CI/CD",
+      readTime: "3 min read",
+      url: "https://hash.prasanthkj.com/using-buddyworks-to-automate-react-deployment-on-shared-hosting",
+      summary: "How to automate React production builds and deploy them seamlessly to traditional shared hosting servers using Buddy.Works pipelines."
     },
     {
-      title: "Building Custom Shopify Liquid Components & Headless React Integrations",
-      tag: "E-Commerce",
-      readTime: "7 min read",
-      summary: "A deep dive into combining Shopify's Storefront API with modern JavaScript frameworks for lightning-fast shopping experiences."
+      title: "Create An Extension/Plugin For Firefox and Chrome Browser",
+      tag: "Browser Extensions",
+      readTime: "2 min read",
+      url: "https://hash.prasanthkj.com/create-plugin-for-firefox-and-chrome-browser",
+      summary: "A step-by-step technical guide to developing cross-browser extensions for Chrome and Firefox using JavaScript and manifest specifications."
     },
     {
-      title: "Local Business Schema.org & Lead Funnel Architecture for Search Ranking",
-      tag: "SEO & Conversion",
-      readTime: "4 min read",
-      summary: "Structuring microdata schemas and click-to-call conversion flows to dominate local search engine results."
+      title: "Introduction To Web and HTML",
+      tag: "Web Fundamentals",
+      readTime: "2 min read",
+      url: "https://hash.prasanthkj.com/introduction-to-web-and-html",
+      summary: "An introductory technical breakdown of web protocols, document object model structure, semantic HTML elements, and core web architecture."
     }
   ]
 };
