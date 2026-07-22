@@ -68,8 +68,8 @@ export const US_SMALL_BIZ_SOLUTIONS = [
       "Before/After Photo Gallery & Verified Customer Reviews",
       "Mobile Click-to-Call & Emergency Dispatch Bar"
     ],
-    tag: "High Lead Conversion",
-    impact: "Click-To-Call Lead Engine"
+    tag: "Lead Conversion",
+    impact: "Click-To-Call Engine"
   },
   {
     id: "ecommerce-stores",
@@ -82,7 +82,7 @@ export const US_SMALL_BIZ_SOLUTIONS = [
       "Custom Shopify Liquid / WooCommerce Theme Architecture"
     ],
     tag: "Conversion Optimized",
-    impact: "Seamless Checkout Funnel"
+    impact: "Seamless Checkout"
   },
   {
     id: "landing-pages",
@@ -95,7 +95,7 @@ export const US_SMALL_BIZ_SOLUTIONS = [
       "Zero-Distraction Layout Engineered for Inbound Leads"
     ],
     tag: "High ROI Funnels",
-    impact: "High-ROI Ad Funnel Architecture"
+    impact: "Ad Funnel Architecture"
   }
 ];
 

@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import SidebarNav from './components/SidebarNav';
 import Hero from './components/Hero';
 import Highlights from './components/Highlights';
-import USSmallBiz from './components/USSmallBiz';
+import WebSolutions from './components/WebSolutions';
 import Projects from './components/Projects';
 import AgencyWorkflow from './components/AgencyWorkflow';
 import Testimonials from './components/Testimonials';
@@ -41,7 +41,7 @@ export default function App() {
           <main className="main-content">
             <Hero />
             <Highlights />
-            <USSmallBiz />
+            <WebSolutions />
             <Projects />
             <AgencyWorkflow />
             <Testimonials />

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { US_SMALL_BIZ_SOLUTIONS, HERO_DATA } from '../data/portfolioData';
 import { CheckCircle2, Calendar, Zap, ShieldCheck, MapPin, Wrench, ShoppingBag, Target } from 'lucide-react';
 
-export default function USSmallBiz() {
+export default function WebSolutions() {
   const [activeTab, setActiveTab] = useState(0);
   const activeSolution = US_SMALL_BIZ_SOLUTIONS[activeTab] || US_SMALL_BIZ_SOLUTIONS[0];
 
@@ -94,11 +94,12 @@ export default function USSmallBiz() {
           }}
         >
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
-              <span className="pill-badge-gold" style={{ fontSize: '0.75rem' }}>
+            {/* 1 Single Line Benefit Pills Container */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem', flexWrap: 'nowrap', overflowX: 'auto' }}>
+              <span className="pill-badge-gold" style={{ fontSize: '0.75rem', whiteSpace: 'nowrap', flexShrink: 0, padding: '0.3rem 0.75rem' }}>
                 {activeSolution.tag}
               </span>
-              <span className="pill-badge-emerald" style={{ fontSize: '0.75rem' }}>
+              <span className="pill-badge-emerald" style={{ fontSize: '0.75rem', whiteSpace: 'nowrap', flexShrink: 0, padding: '0.3rem 0.75rem' }}>
                 {activeSolution.impact}
               </span>
             </div>
