@@ -17,7 +17,7 @@ export default function NewsletterKit() {
       setStatus({ submitting: false, subscribed: true, error: null });
       setEmail('');
     } catch (err) {
-      console.error('Kit.com subscribe error:', err);
+      console.error('Newsletter subscribe error:', err);
       setStatus({ submitting: false, subscribed: true, error: null });
     }
   };
@@ -39,11 +39,11 @@ export default function NewsletterKit() {
         <div>
           <div className="pill-badge-emerald" style={{ marginBottom: '0.75rem', display: 'inline-flex' }}>
             <Sparkles size={14} />
-            <span>Kit.com Newsletter</span>
+            <span>Newsletter</span>
           </div>
 
           <h3 style={{ fontSize: 'clamp(1.35rem, 2.5vw, 1.75rem)', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
-            Web Growth Insights for Small Business Owners
+            Web Growth Insights
           </h3>
 
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.5 }}>
@@ -68,7 +68,7 @@ export default function NewsletterKit() {
               }}
             >
               <CheckCircle2 size={24} color="var(--accent-emerald)" />
-              <span>You're subscribed! Check your inbox for the Kit.com confirmation.</span>
+              <span>You're subscribed! Check your inbox for confirmation.</span>
             </div>
           ) : (
             <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
@@ -115,8 +115,8 @@ export default function NewsletterKit() {
               </button>
             </form>
           )}
-          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.5rem', paddingLeft: '0.5rem' }}>
-            Powered by Kit.com • No spam, unsubscribe anytime.
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.5rem', paddingLeft: '0.5rem', lineHeight: 1.4 }}>
+            🔒 No spam. Unsubscribe anytime. Emails may contain links to my services or partner offers.
           </div>
         </div>
       </div>

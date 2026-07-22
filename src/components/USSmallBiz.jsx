@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { US_SMALL_BIZ_SOLUTIONS, HERO_DATA } from '../data/portfolioData';
-import { CheckCircle2, Calendar, Zap, ShieldCheck, MapPin, ArrowRight } from 'lucide-react';
+import { CheckCircle2, Calendar, Zap, ShieldCheck, MapPin, Trees, Sparkles, Wrench } from 'lucide-react';
 
 export default function USSmallBiz() {
   const [activeTab, setActiveTab] = useState(0);
   const activeSolution = US_SMALL_BIZ_SOLUTIONS[activeTab] || US_SMALL_BIZ_SOLUTIONS[0];
+
+  const tabIcons = [Trees, Sparkles, Wrench];
 
   return (
     <section id="small-biz" style={{ padding: '80px 0' }}>
@@ -27,44 +29,51 @@ export default function USSmallBiz() {
           </h2>
 
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.6 }}>
-            Turn casual visitors into phone calls and monthly bookings. Select your industry below to explore tailored web solutions:
+            Turn casual searchers into phone calls and monthly bookings. Click an industry below to see tailored web features:
           </p>
         </div>
 
-        {/* Industry Selector Tabs */}
+        {/* High-UX Segmented Control Tab Switcher */}
         <div
           style={{
-            display: 'flex',
+            display: 'inline-flex',
             flexWrap: 'wrap',
-            gap: '0.75rem',
+            gap: '0.4rem',
+            background: 'var(--btn-sec-bg)',
+            padding: '0.4rem',
+            borderRadius: 'var(--radius-full)',
+            border: '1px solid var(--border-subtle)',
             marginBottom: '2.5rem',
-            paddingBottom: '1rem',
-            borderBottom: '1px solid var(--border-subtle)',
+            maxWidth: '100%',
           }}
         >
           {US_SMALL_BIZ_SOLUTIONS.map((item, idx) => {
             const isSelected = activeTab === idx;
+            const IconComponent = tabIcons[idx] || Trees;
+
             return (
               <button
                 key={item.id}
                 onClick={() => setActiveTab(idx)}
                 style={{
-                  padding: '0.75rem 1.25rem',
+                  padding: '0.65rem 1.25rem',
                   borderRadius: 'var(--radius-full)',
-                  border: isSelected ? '1px solid var(--accent-purple)' : '1px solid var(--border-subtle)',
-                  background: isSelected ? 'var(--pill-bg)' : 'var(--btn-sec-bg)',
-                  color: isSelected ? 'var(--accent-purple)' : 'var(--text-secondary)',
+                  border: 'none',
+                  background: isSelected ? 'linear-gradient(135deg, var(--accent-purple) 0%, #1e4078 100%)' : 'transparent',
+                  color: isSelected ? '#ffffff' : 'var(--text-secondary)',
                   fontWeight: isSelected ? 700 : 500,
-                  fontSize: '0.925rem',
+                  fontSize: '0.9rem',
                   cursor: 'pointer',
-                  transition: 'all 0.2s ease',
+                  transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '0.5rem',
+                  boxShadow: isSelected ? '0 4px 15px rgba(44, 94, 173, 0.35)' : 'none',
+                  whiteSpace: 'nowrap',
                 }}
               >
+                <IconComponent size={16} color={isSelected ? '#ffffff' : 'var(--accent-purple)'} />
                 <span>{item.title}</span>
-                {isSelected && <ArrowRight size={14} />}
               </button>
             );
           })}

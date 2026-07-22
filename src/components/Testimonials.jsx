@@ -30,7 +30,7 @@ export default function Testimonials() {
             key={item.id}
             className="glass-card"
             style={{
-              padding: '2rem',
+              padding: '1.75rem',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
@@ -38,25 +38,27 @@ export default function Testimonials() {
             }}
           >
             <div>
-              {/* Header Rating Stars & Badge */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
-                <div style={{ display: 'flex', gap: '3px' }}>
+              {/* Header Rating Stars & Single-Line Verified Badge */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', flexWrap: 'nowrap', gap: '0.5rem' }}>
+                <div style={{ display: 'flex', gap: '3px', flexShrink: 0 }}>
                   {[...Array(item.rating)].map((_, i) => (
-                    <Star key={i} size={16} fill="var(--accent-gold)" color="var(--accent-gold)" />
+                    <Star key={i} size={15} fill="var(--accent-gold)" color="var(--accent-gold)" />
                   ))}
                 </div>
 
                 <span
                   style={{
-                    fontSize: '0.75rem',
+                    fontSize: '0.7rem',
                     fontWeight: 700,
                     color: 'var(--pill-emerald-text)',
                     background: 'var(--pill-emerald-bg)',
-                    padding: '0.2rem 0.6rem',
+                    padding: '0.2rem 0.55rem',
                     borderRadius: 'var(--radius-full)',
-                    display: 'flex',
+                    display: 'inline-flex',
                     alignItems: 'center',
                     gap: '4px',
+                    whiteSpace: 'nowrap',
+                    flexShrink: 0,
                   }}
                 >
                   <ShieldCheck size={12} />
@@ -68,7 +70,7 @@ export default function Testimonials() {
               <p
                 style={{
                   color: 'var(--text-secondary)',
-                  fontSize: '0.975rem',
+                  fontSize: '0.95rem',
                   lineHeight: 1.65,
                   fontStyle: 'italic',
                   marginBottom: '1.5rem',
@@ -80,10 +82,10 @@ export default function Testimonials() {
             </div>
 
             <div style={{ paddingTop: '1rem', borderTop: '1px solid var(--border-subtle)' }}>
-              <div style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--text-primary)' }}>
+              <div style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--text-primary)' }}>
                 {item.client}
               </div>
-              <div style={{ fontSize: '0.85rem', color: 'var(--accent-purple)', fontWeight: 600 }}>
+              <div style={{ fontSize: '0.825rem', color: 'var(--accent-purple)', fontWeight: 600 }}>
                 {item.project} • <span style={{ color: 'var(--text-muted)' }}>{item.location}</span>
               </div>
             </div>

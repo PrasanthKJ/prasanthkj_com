@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HERO_DATA } from '../data/portfolioData';
-import { Mail, Send, CheckCircle2, Calendar, ShieldCheck } from 'lucide-react';
+import { Mail, Send, CheckCircle2, Calendar } from 'lucide-react';
 
 export default function ContactHubspot() {
   const [formData, setFormData] = useState({
@@ -169,7 +169,7 @@ export default function ContactHubspot() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="e.g. John Smith"
+                    placeholder="e.g. Daniel Miller"
                     style={{
                       width: '100%',
                       padding: '0.75rem 1rem',
@@ -194,7 +194,7 @@ export default function ContactHubspot() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="john@yourcompany.com"
+                    placeholder="daniel@yourcompany.com"
                     style={{
                       width: '100%',
                       padding: '0.75rem 1rem',
