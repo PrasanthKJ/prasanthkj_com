@@ -1,0 +1,170 @@
+import React from 'react';
+import { FEATURED_PROJECTS } from '../data/portfolioData';
+import { ExternalLink, Star, ArrowUpRight, Zap, Code2, Globe } from 'lucide-react';
+
+export default function Projects() {
+  return (
+    <section id="works" style={{ padding: '80px 0' }}>
+      <div style={{ marginBottom: '3rem' }}>
+        <div className="pill-badge" style={{ marginBottom: '0.75rem' }}>
+          Portfolio Showcase
+        </div>
+        <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 800, marginBottom: '0.75rem' }}>
+          Delivered Client Works & Case Studies
+        </h2>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '700px' }}>
+          A selection of live client projects delivered with high performance, seamless user experience, and measurable business growth.
+        </p>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+        {FEATURED_PROJECTS.map((project, idx) => (
+          <div
+            key={project.id}
+            className="glass-card"
+            style={{
+              padding: 'clamp(1.75rem, 3vw, 2.75rem)',
+              position: 'relative',
+              overflow: 'hidden',
+              background: `linear-gradient(135deg, rgba(20, 24, 34, 0.8) 0%, rgba(13, 15, 20, 0.9) 100%)`,
+              border: `1px solid rgba(255, 255, 255, 0.08)`,
+            }}
+          >
+            {/* Background Ambient Glow per Card */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '-50px',
+                right: '-50px',
+                width: '300px',
+                height: '300px',
+                borderRadius: '50%',
+                background: project.accentGlow,
+                filter: 'blur(80px)',
+                pointerEvents: 'none',
+              }}
+            ></div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '1.5rem', alignItems: 'flex-start' }}>
+              <div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                  <span
+                    className={
+                      project.badgeColor === 'gold'
+                        ? 'pill-badge-gold'
+                        : project.badgeColor === 'emerald'
+                        ? 'pill-badge-emerald'
+                        : 'pill-badge'
+                    }
+                  >
+                    {project.category}
+                  </span>
+
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.85rem', color: '#fcd34d', fontWeight: 600 }}>
+                    <Star size={14} fill="#f59e0b" color="#f59e0b" />
+                    {project.metrics.rating}
+                  </span>
+                </div>
+
+                <h3 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)', fontWeight: 800, marginBottom: '0.5rem', color: '#ffffff' }}>
+                  {project.title}
+                </h3>
+
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    color: 'var(--accent-cyan)',
+                    fontSize: '1rem',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    marginBottom: '1.25rem',
+                  }}
+                >
+                  <Globe size={16} />
+                  <span>{project.displayUrl}</span>
+                  <ExternalLink size={14} />
+                </a>
+
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.6, maxWidth: '850px', marginBottom: '1.75rem' }}>
+                  {project.description}
+                </p>
+
+                {/* Tech Stack Tags */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', marginBottom: '1.75rem' }}>
+                  {project.techStack.map((tech, tIdx) => (
+                    <span
+                      key={tIdx}
+                      style={{
+                        padding: '0.3rem 0.75rem',
+                        borderRadius: 'var(--radius-sm)',
+                        background: 'rgba(255, 255, 255, 0.04)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
+                        fontSize: '0.825rem',
+                        fontWeight: 600,
+                        color: 'var(--text-secondary)',
+                      }}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Action Button */}
+              <div>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                  style={{
+                    padding: '0.75rem 1.25rem',
+                    fontSize: '0.9rem',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  Visit Live Site
+                  <ArrowUpRight size={16} />
+                </a>
+              </div>
+            </div>
+
+            {/* Bottom Metrics Bar */}
+            <div
+              style={{
+                marginTop: '1rem',
+                paddingTop: '1.25rem',
+                borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+                display: 'flex',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '1rem',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: 'var(--accent-emerald)', fontWeight: 700 }}>
+                  <Zap size={16} />
+                  <span>{project.metrics.result}</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: 'var(--text-secondary)', fontWeight: 600 }}>
+                  <Code2 size={16} color="var(--accent-purple)" />
+                  <span>{project.metrics.speed}</span>
+                </div>
+              </div>
+
+              <span style={{ fontSize: '0.825rem', color: 'var(--text-muted)' }}>
+                Client Verified Project Delivery
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
