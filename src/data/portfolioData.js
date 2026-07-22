@@ -69,20 +69,20 @@ export const US_SMALL_BIZ_SOLUTIONS = [
       "Mobile Click-to-Call & Emergency Dispatch Bar"
     ],
     tag: "High Lead Conversion",
-    impact: "+210% Booking Rate"
+    impact: "Click-To-Call Lead Engine"
   },
   {
     id: "ecommerce-stores",
     title: "E-Commerce Stores",
     subtitle: "High-Converting Shopify & WooCommerce Online Shops",
     features: [
-      "Frictionless One-Page Checkout & Payment Funnel",
-      "Automated Inventory Sync & Stripe/PayPal Gateway Integration",
+      "Frictionless One-Page Checkout & Multi-Currency Payment Funnel",
+      "Multi-Gateway Integration (Stripe, PayPal, Authorize.Net, Square, Razorpay, Apple Pay, Klarna)",
       "Sub-Second Fast Loading Speed (0.9s Core Web Vitals)",
       "Custom Shopify Liquid / WooCommerce Theme Architecture"
     ],
     tag: "Conversion Optimized",
-    impact: "2.8x Direct Sales"
+    impact: "Seamless Checkout Funnel"
   },
   {
     id: "landing-pages",
@@ -95,7 +95,7 @@ export const US_SMALL_BIZ_SOLUTIONS = [
       "Zero-Distraction Layout Engineered for Inbound Leads"
     ],
     tag: "High ROI Funnels",
-    impact: "+300% Inquiries"
+    impact: "High-ROI Ad Funnel Architecture"
   }
 ];
 
@@ -126,7 +126,7 @@ export const FEATURED_PROJECTS = [
     techStack: ["Shopify CMS / WooCommerce", "Custom Theme Development", "Stripe Integration", "Conversion Optimization"],
     metrics: {
       rating: "5.0 ★★★★★",
-      result: "2.8x Sales Growth",
+      result: "Core Web Vitals Pass",
       speed: "0.9s Load Time"
     },
     badgeColor: "emerald",
