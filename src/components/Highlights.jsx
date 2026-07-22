@@ -19,7 +19,7 @@ export default function Highlights() {
         <div className="pill-badge-emerald" style={{ marginBottom: '0.75rem' }}>
           Key Achievements & Experience
         </div>
-        <h2 style={{ fontSize: '2.25rem', fontWeight: 800 }}>Why US Clients & Agencies Trust Prasanth KJ</h2>
+        <h2 style={{ fontSize: '2.25rem', fontWeight: 800 }}>Why Clients & Agencies Trust Prasanth</h2>
       </div>
 
       <div
