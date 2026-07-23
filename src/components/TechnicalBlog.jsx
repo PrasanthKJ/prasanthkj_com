@@ -8,10 +8,12 @@ export default function TechnicalBlog() {
       <div
         className="glass-card"
         style={{
-          padding: 'clamp(2rem, 4vw, 3.5rem)',
+          padding: 'clamp(1.5rem, 4vw, 3.5rem)',
           border: '1px solid var(--border-subtle)',
           position: 'relative',
           overflow: 'hidden',
+          boxSizing: 'border-box',
+          maxWidth: '100%',
         }}
       >
         {/* Ambient Glow */}
@@ -29,18 +31,18 @@ export default function TechnicalBlog() {
           }}
         ></div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '1.5rem', alignItems: 'flex-start', marginBottom: '2.5rem' }}>
-          <div>
-            <div className="pill-badge-emerald" style={{ marginBottom: '0.75rem', gap: '6px', background: 'rgba(6, 182, 212, 0.12)', border: '1px solid rgba(6, 182, 212, 0.3)', color: 'var(--accent-cyan)' }}>
-              <Code2 size={14} />
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1.5rem', marginBottom: '2.5rem', maxWidth: '100%' }}>
+          <div style={{ flex: '1 1 300px', minWidth: 0 }}>
+            <div className="pill-badge-emerald" style={{ marginBottom: '0.75rem', gap: '6px', background: 'rgba(6, 182, 212, 0.12)', border: '1px solid rgba(6, 182, 212, 0.3)', color: 'var(--accent-cyan)', maxWidth: '100%', boxSizing: 'border-box' }}>
+              <Code2 size={14} style={{ flexShrink: 0 }} />
               <span>Developer's Corner & Engineering Blog</span>
             </div>
 
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '0.75rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', fontWeight: 800, color: 'var(--text-primary)', marginBottom: '0.75rem', wordBreak: 'break-word' }}>
               Technical Engineering Notes & Code Breakdown
             </h2>
 
-            <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', maxWidth: '750px', lineHeight: 1.6 }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', maxWidth: '750px', lineHeight: 1.6, wordBreak: 'break-word' }}>
               {TECHNICAL_ARTICLES.description} Read full technical write-ups on my{' '}
               <a
                 href={TECHNICAL_ARTICLES.blogUrl}
@@ -53,7 +55,7 @@ export default function TechnicalBlog() {
             </p>
           </div>
 
-          <div>
+          <div style={{ flexShrink: 0 }}>
             <a
               href={TECHNICAL_ARTICLES.blogUrl}
               target="_blank"
@@ -62,6 +64,7 @@ export default function TechnicalBlog() {
               style={{
                 borderColor: 'rgba(6, 182, 212, 0.4)',
                 padding: '0.75rem 1.25rem',
+                whiteSpace: 'nowrap',
               }}
             >
               Visit Technical Blog
@@ -74,9 +77,11 @@ export default function TechnicalBlog() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '1.5rem',
             marginBottom: '1rem',
+            maxWidth: '100%',
+            boxSizing: 'border-box',
           }}
         >
           {TECHNICAL_ARTICLES.articles.map((art, idx) => (
@@ -98,6 +103,8 @@ export default function TechnicalBlog() {
                   flexDirection: 'column',
                   justifyContent: 'space-between',
                   transition: 'transform 0.2s ease, border-color 0.2s ease',
+                  boxSizing: 'border-box',
+                  maxWidth: '100%',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-3px)';
@@ -118,11 +125,11 @@ export default function TechnicalBlog() {
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.75rem', lineHeight: 1.4 }}>
+                  <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.75rem', lineHeight: 1.4, wordBreak: 'break-word' }}>
                     {art.title}
                   </h3>
 
-                  <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: 1.5, wordBreak: 'break-word' }}>
                     {art.summary}
                   </p>
                 </div>

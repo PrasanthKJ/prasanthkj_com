@@ -18,14 +18,16 @@ export default function Projects() {
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-        {FEATURED_PROJECTS.map((project, idx) => (
+        {FEATURED_PROJECTS.map((project) => (
           <div
             key={project.id}
             className="glass-card"
             style={{
-              padding: 'clamp(1.75rem, 3vw, 2.75rem)',
+              padding: 'clamp(1.5rem, 3vw, 2.75rem)',
               position: 'relative',
               overflow: 'hidden',
+              boxSizing: 'border-box',
+              maxWidth: '100%',
             }}
           >
             {/* Background Ambient Glow per Card */}
@@ -34,8 +36,8 @@ export default function Projects() {
                 position: 'absolute',
                 top: '-50px',
                 right: '-50px',
-                width: '300px',
-                height: '300px',
+                width: '280px',
+                height: '280px',
                 borderRadius: '50%',
                 background: project.accentGlow,
                 filter: 'blur(80px)',
@@ -43,9 +45,20 @@ export default function Projects() {
               }}
             ></div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '1.5rem', alignItems: 'flex-start' }}>
-              <div>
-                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+            {/* Upper Content & Action Button Row */}
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                justifyContent: 'space-between',
+                alignItems: 'flex-start',
+                gap: '1.5rem',
+                marginBottom: '1.5rem',
+                maxWidth: '100%',
+              }}
+            >
+              <div style={{ flex: '1 1 300px', minWidth: 0 }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem', maxWidth: '100%' }}>
                   <span
                     className={
                       project.badgeColor === 'gold'
@@ -54,6 +67,7 @@ export default function Projects() {
                         ? 'pill-badge-emerald'
                         : 'pill-badge'
                     }
+                    style={{ maxWidth: '100%', boxSizing: 'border-box' }}
                   >
                     {project.category}
                   </span>
@@ -64,7 +78,7 @@ export default function Projects() {
                   </span>
                 </div>
 
-                <h3 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
+                <h3 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.25rem)', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--text-primary)', wordBreak: 'break-word' }}>
                   {project.title}
                 </h3>
 
@@ -81,30 +95,35 @@ export default function Projects() {
                     fontWeight: 600,
                     textDecoration: 'none',
                     marginBottom: '1.25rem',
+                    wordBreak: 'break-all',
+                    maxWidth: '100%',
                   }}
                 >
-                  <Globe size={16} />
+                  <Globe size={16} style={{ flexShrink: 0 }} />
                   <span>{project.displayUrl}</span>
-                  {project.url.startsWith('http') && <ExternalLink size={14} />}
+                  {project.url.startsWith('http') && <ExternalLink size={14} style={{ flexShrink: 0 }} />}
                 </a>
 
-                <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.6, maxWidth: '850px', marginBottom: '1.75rem' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.6, maxWidth: '850px', marginBottom: '1.5rem', wordBreak: 'break-word' }}>
                   {project.description}
                 </p>
 
                 {/* Tech Stack Tags */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', marginBottom: '1.75rem' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', maxWidth: '100%' }}>
                   {project.techStack.map((tech, tIdx) => (
                     <span
                       key={tIdx}
                       style={{
-                        padding: '0.3rem 0.75rem',
-                        borderRadius: 'var(--radius-sm)',
                         background: 'var(--btn-sec-bg)',
                         border: '1px solid var(--border-subtle)',
+                        borderRadius: 'var(--radius-sm)',
+                        padding: '0.35rem 0.75rem',
                         fontSize: '0.825rem',
-                        fontWeight: 600,
                         color: 'var(--text-secondary)',
+                        fontWeight: 600,
+                        wordBreak: 'break-word',
+                        boxSizing: 'border-box',
+                        maxWidth: '100%',
                       }}
                     >
                       {tech}
@@ -113,8 +132,8 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Action Button */}
-              <div>
+              {/* Action Button - Reinstated for Desktop & Mobile */}
+              <div style={{ flexShrink: 0 }}>
                 <a
                   href={project.url}
                   target={project.url.startsWith('http') ? '_blank' : '_self'}
@@ -135,7 +154,6 @@ export default function Projects() {
             {/* Bottom Metrics Bar */}
             <div
               style={{
-                marginTop: '1rem',
                 paddingTop: '1.25rem',
                 borderTop: '1px solid var(--border-subtle)',
                 display: 'flex',
@@ -143,15 +161,16 @@ export default function Projects() {
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 gap: '1rem',
+                maxWidth: '100%',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: 'var(--accent-emerald)', fontWeight: 700 }}>
-                  <Zap size={16} />
+                  <Zap size={16} style={{ flexShrink: 0 }} />
                   <span>{project.metrics.result}</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', color: 'var(--text-secondary)', fontWeight: 600 }}>
-                  <Code2 size={16} color="var(--accent-purple)" />
+                  <Code2 size={16} color="var(--accent-purple)" style={{ flexShrink: 0 }} />
                   <span>{project.metrics.speed}</span>
                 </div>
               </div>

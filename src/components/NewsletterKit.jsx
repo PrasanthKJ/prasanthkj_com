@@ -25,18 +25,21 @@ export default function NewsletterKit() {
   return (
     <section style={{ padding: '40px 0' }}>
       <div
-        className="glass-card"
+        className="glass-card newsletter-card-container"
         style={{
-          padding: 'clamp(1.75rem, 3vw, 2.5rem)',
+          padding: 'clamp(1.25rem, 3vw, 2.5rem)',
           background: 'var(--pill-emerald-bg)',
           border: '1px solid rgba(16, 185, 129, 0.25)',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '2rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+          gap: '1.5rem',
           alignItems: 'center',
+          boxSizing: 'border-box',
+          maxWidth: '100%',
+          overflow: 'hidden',
         }}
       >
-        <div>
+        <div className="newsletter-text-col">
           <div className="pill-badge-emerald" style={{ marginBottom: '0.75rem', display: 'inline-flex' }}>
             <Sparkles size={14} />
             <span>Newsletter</span>
@@ -51,7 +54,7 @@ export default function NewsletterKit() {
           </p>
         </div>
 
-        <div>
+        <div className="newsletter-action-col">
           {status.subscribed ? (
             <div
               style={{
@@ -71,8 +74,8 @@ export default function NewsletterKit() {
               <span>You're subscribed! Check your inbox for confirmation.</span>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-              <div style={{ position: 'relative', flex: 1, minWidth: '220px' }}>
+            <form onSubmit={handleSubmit} className="newsletter-form" style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+              <div style={{ position: 'relative', flex: 1, minWidth: '220px', width: '100%' }}>
                 <Mail
                   size={18}
                   color="var(--text-muted)"
@@ -94,6 +97,7 @@ export default function NewsletterKit() {
                     fontSize: '0.9rem',
                     fontFamily: 'inherit',
                     outline: 'none',
+                    boxSizing: 'border-box',
                   }}
                 />
               </div>
@@ -101,7 +105,7 @@ export default function NewsletterKit() {
               <button
                 type="submit"
                 disabled={status.submitting}
-                className="btn-primary"
+                className="btn-primary newsletter-submit-btn"
                 style={{
                   background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
                   padding: '0.8rem 1.5rem',
@@ -115,7 +119,7 @@ export default function NewsletterKit() {
               </button>
             </form>
           )}
-          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.5rem', paddingLeft: '0.5rem', lineHeight: 1.4 }}>
+          <div className="newsletter-disclaimer" style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.5rem', paddingLeft: '0.5rem', lineHeight: 1.4 }}>
             🔒 No spam. Unsubscribe anytime. Emails may contain links to my services or partner offers.
           </div>
         </div>

@@ -10,10 +10,10 @@ export default function Testimonials() {
           <Award size={14} />
           <span>Client Reviews & Social Proof</span>
         </div>
-        <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 800, marginBottom: '1rem', color: 'var(--text-primary)' }}>
+        <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.75rem)', fontWeight: 800, marginBottom: '1rem', color: 'var(--text-primary)' }}>
           What Clients Say About Working With Prasanth
         </h2>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.6 }}>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.6 }}>
           100% Job Success Rate & Top Rated Status earned by delivering consistent quality, prompt communication, and high-impact web development.
         </p>
       </div>
@@ -21,8 +21,10 @@ export default function Testimonials() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '1.75rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '1.5rem',
+          maxWidth: '100%',
+          boxSizing: 'border-box',
         }}
       >
         {TESTIMONIALS.map((item) => (
@@ -30,16 +32,19 @@ export default function Testimonials() {
             key={item.id}
             className="glass-card"
             style={{
-              padding: '1.75rem',
+              padding: 'clamp(1.25rem, 3vw, 1.75rem)',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
               position: 'relative',
+              boxSizing: 'border-box',
+              maxWidth: '100%',
+              overflow: 'hidden',
             }}
           >
             <div>
-              {/* Header Rating Stars & Single-Line Verified Badge */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', flexWrap: 'nowrap', gap: '0.5rem' }}>
+              {/* Header Rating Stars & Verified Badge - Single Line on Desktop */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', flexWrap: 'nowrap', gap: '0.4rem', width: '100%' }}>
                 <div style={{ display: 'flex', gap: '3px', flexShrink: 0 }}>
                   {[...Array(item.rating)].map((_, i) => (
                     <Star key={i} size={15} fill="var(--accent-gold)" color="var(--accent-gold)" />
@@ -57,12 +62,13 @@ export default function Testimonials() {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '4px',
+                    boxSizing: 'border-box',
                     whiteSpace: 'nowrap',
                     flexShrink: 0,
                   }}
                 >
-                  <ShieldCheck size={12} />
-                  {item.verified}
+                  <ShieldCheck size={12} style={{ flexShrink: 0 }} />
+                  <span>{item.verified}</span>
                 </span>
               </div>
 
@@ -70,11 +76,12 @@ export default function Testimonials() {
               <p
                 style={{
                   color: 'var(--text-secondary)',
-                  fontSize: '0.95rem',
-                  lineHeight: 1.65,
+                  fontSize: '0.925rem',
+                  lineHeight: 1.6,
                   fontStyle: 'italic',
                   marginBottom: '1.5rem',
                   position: 'relative',
+                  wordBreak: 'break-word',
                 }}
               >
                 "{item.quote}"
@@ -82,10 +89,10 @@ export default function Testimonials() {
             </div>
 
             <div style={{ paddingTop: '1rem', borderTop: '1px solid var(--border-subtle)' }}>
-              <div style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--text-primary)' }}>
+              <div style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--text-primary)', wordBreak: 'break-word' }}>
                 {item.client}
               </div>
-              <div style={{ fontSize: '0.825rem', color: 'var(--accent-purple)', fontWeight: 600 }}>
+              <div style={{ fontSize: '0.825rem', color: 'var(--accent-purple)', fontWeight: 600, wordBreak: 'break-word' }}>
                 {item.project} • <span style={{ color: 'var(--text-muted)' }}>{item.location}</span>
               </div>
             </div>

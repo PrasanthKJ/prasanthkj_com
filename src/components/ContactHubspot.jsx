@@ -38,11 +38,14 @@ export default function ContactHubspot() {
       <div
         className="glass-card"
         style={{
-          padding: 'clamp(2rem, 4vw, 3.5rem)',
+          padding: 'clamp(1.25rem, 3vw, 3.5rem)',
           border: '1px solid var(--border-subtle)',
+          boxSizing: 'border-box',
+          maxWidth: '100%',
+          overflow: 'hidden',
         }}
       >
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', maxWidth: '100%', boxSizing: 'border-box' }}>
           {/* Left Column Info */}
           <div>
             <div className="pill-badge" style={{ marginBottom: '1rem' }}>

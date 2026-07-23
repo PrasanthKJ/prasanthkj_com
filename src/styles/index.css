@@ -398,9 +398,119 @@ h1, h2, h3, h4, h5, h6 {
   animation: pulseGlow 6s ease-in-out infinite;
 }
 
-/* Responsive Adjustments */
+.web-solutions-tab-bar {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  background: var(--btn-sec-bg);
+  padding: 0.4rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 2.5rem;
+  max-width: 100%;
+}
+
+.web-solutions-tab-btn {
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-full);
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Responsive Adjustments & Mobile Safety Rules */
 @media (max-width: 1024px) {
   .page-wrapper {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .glass-card {
+    padding: 1.25rem !important;
+    border-radius: 16px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    word-break: break-word !important;
+  }
+
+  .web-solutions-tab-bar {
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: 14px !important;
+    padding: 0.35rem !important;
+    width: 100% !important;
+  }
+
+  .web-solutions-tab-btn {
+    border-radius: 10px !important;
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.65rem 0.85rem !important;
+    white-space: normal !important;
+  }
+
+  .ambient-glow {
+    width: 250px !important;
+    height: 250px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  /* Pill badges wrap cleanly on mobile so text doesn't overflow card edges */
+  .pill-badge, .pill-badge-gold, .pill-badge-emerald {
+    white-space: normal !important;
+    word-break: break-word !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Newsletter Mobile Centering */
+  .newsletter-card-container {
+    text-align: center !important;
+  }
+
+  .newsletter-text-col {
+    text-align: center !important;
+  }
+
+  .newsletter-form {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .newsletter-submit-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .newsletter-disclaimer {
+    text-align: center !important;
+    padding-left: 0 !important;
+    margin-top: 0.75rem !important;
   }
 }
