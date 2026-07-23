@@ -23,18 +23,18 @@ export default function Hero() {
       <div className="ambient-glow glow-1 pulse-animation" style={{ left: '50%', transform: 'translateX(-50%)' }}></div>
 
       <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '920px', width: '100%' }}>
-        {/* Top Trust Status Pill */}
-        <div style={{ marginBottom: '1.75rem', display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center', alignItems: 'center' }}>
-          <div className="pill-badge-gold" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-            <Award size={16} color="var(--pill-gold-text)" />
-            <span>{HERO_DATA.upworkStatus.title}</span>
-            <span style={{ opacity: 0.6 }}>•</span>
-            <span>{HERO_DATA.upworkStatus.rating}</span>
+        {/* Sleek Compact Trust Badges */}
+        <div style={{ marginBottom: '1.25rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center', alignItems: 'center' }}>
+          <div className="pill-badge-gold" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', padding: '0.2rem 0.65rem' }}>
+            <Award size={13} color="var(--pill-gold-text)" />
+            <span>Top Rated</span>
+            <span style={{ opacity: 0.5 }}>•</span>
+            <span>5.0 ★★★★★</span>
           </div>
 
-          <div className="pill-badge-emerald" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-            <CheckCircle size={14} color="var(--accent-emerald)" />
-            <span>{HERO_DATA.upworkStatus.successRate}</span>
+          <div className="pill-badge-emerald" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', padding: '0.2rem 0.65rem' }}>
+            <CheckCircle size={13} color="var(--accent-emerald)" />
+            <span>100% Job Success</span>
           </div>
         </div>
 

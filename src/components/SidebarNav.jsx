@@ -7,7 +7,7 @@ export default function SidebarNav() {
 
   const sections = [
     { id: 'highlights', label: 'Highlights', icon: Award },
-    { id: 'small-biz', label: 'Local Biz Solutions', icon: Briefcase },
+    { id: 'small-biz', label: 'Services & Solutions', icon: Briefcase },
     { id: 'works', label: 'Client Works', icon: CheckCircle2 },
     { id: 'workflow', label: 'Agency Workflow', icon: Workflow },
     { id: 'testimonials', label: 'Client Trust', icon: Star },

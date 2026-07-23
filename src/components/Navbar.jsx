@@ -16,7 +16,7 @@ export default function Navbar({ theme = 'light', toggleTheme }) {
 
   const navLinks = [
     { name: 'Highlights', href: '#highlights' },
-    { name: 'US Biz Solutions', href: '#small-biz' },
+    { name: 'Services & Solutions', href: '#small-biz' },
     { name: 'Client Works', href: '#works' },
     { name: 'Agency Workflow', href: '#workflow' },
     { name: 'Testimonials', href: '#testimonials' },
@@ -32,7 +32,7 @@ export default function Navbar({ theme = 'light', toggleTheme }) {
         left: 0,
         right: 0,
         zIndex: 100,
-        padding: scrolled ? '0.75rem 0' : '1.25rem 0',
+        padding: scrolled ? '0.6rem 0' : '1rem 0',
         transition: 'all 0.3s ease',
         background: scrolled
           ? 'var(--nav-bg)'
@@ -42,41 +42,44 @@ export default function Navbar({ theme = 'light', toggleTheme }) {
         borderBottom: scrolled ? '1px solid var(--nav-border)' : '1px solid transparent',
       }}
     >
-      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
         {/* Brand Logo */}
         <a
           href="#"
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '0.75rem',
+            gap: '0.65rem',
             textDecoration: 'none',
             color: 'var(--text-primary)',
             fontWeight: 800,
-            fontSize: '1.25rem',
+            fontSize: '1.15rem',
             fontFamily: 'var(--font-heading)',
+            flexShrink: 0,
           }}
         >
           <div
             style={{
-              width: '38px',
-              height: '38px',
-              borderRadius: '12px',
+              width: '36px',
+              height: '36px',
+              borderRadius: '10px',
               background: 'linear-gradient(135deg, #2C5EAD 0%, #10b981 100%)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               color: '#ffffff',
               boxShadow: '0 4px 15px rgba(44, 94, 173, 0.3)',
+              fontSize: '0.95rem',
+              fontWeight: 800,
             }}
           >
             PK
           </div>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span style={{ lineHeight: 1.1 }}>Prasanth KJ</span>
-            <span style={{ fontSize: '0.7rem', color: 'var(--accent-emerald)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--accent-emerald)', display: 'inline-block' }}></span>
-              Available for Projects
+            <span style={{ lineHeight: 1.1, whiteSpace: 'nowrap' }}>Prasanth KJ</span>
+            <span className="navbar-status-badge" style={{ fontSize: '0.675rem', color: 'var(--accent-emerald)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px', whiteSpace: 'nowrap' }}>
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--accent-emerald)', display: 'inline-block', flexShrink: 0 }}></span>
+              <span className="status-text">Available for Projects</span>
             </span>
           </div>
         </a>
@@ -87,9 +90,9 @@ export default function Navbar({ theme = 'light', toggleTheme }) {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '1.5rem',
+            gap: '1.25rem',
             background: 'var(--btn-sec-bg)',
-            padding: '0.4rem 1.25rem',
+            padding: '0.4rem 1.1rem',
             borderRadius: 'var(--radius-full)',
             border: '1px solid var(--border-subtle)',
           }}
@@ -103,11 +106,12 @@ export default function Navbar({ theme = 'light', toggleTheme }) {
               style={{
                 color: link.external ? 'var(--accent-emerald)' : 'var(--text-secondary)',
                 textDecoration: 'none',
-                fontSize: '0.875rem',
+                fontSize: '0.85rem',
                 fontWeight: link.external ? 600 : 500,
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.25rem',
+                whiteSpace: 'nowrap',
                 transition: 'color 0.2s ease',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-purple)')}
@@ -120,30 +124,32 @@ export default function Navbar({ theme = 'light', toggleTheme }) {
         </nav>
 
         {/* Action CTA & Theme Toggle Button */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          {/* Theme Switcher Toggle - Placed right before Get in Touch */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexShrink: 0 }}>
+          {/* Theme Switcher Toggle */}
           <button
             onClick={toggleTheme}
             className="theme-toggle-btn"
             title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
             aria-label="Toggle dark/light theme"
+            style={{ padding: '0.45rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           >
-            {theme === 'dark' ? <Sun size={20} color="#f59e0b" /> : <Moon size={20} color="#2C5EAD" />}
+            {theme === 'dark' ? <Sun size={18} color="#f59e0b" /> : <Moon size={18} color="#2C5EAD" />}
           </button>
 
           <a
             href="#contact"
-            className="btn-primary"
+            className="nav-cta-btn btn-primary"
             style={{
-              padding: '0.6rem 1.25rem',
-              fontSize: '0.875rem',
+              padding: '0.5rem 1rem',
+              fontSize: '0.825rem',
+              whiteSpace: 'nowrap',
             }}
           >
             Get in Touch
-            <ArrowUpRight size={16} />
+            <ArrowUpRight size={14} />
           </a>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="mobile-toggle"
@@ -152,13 +158,16 @@ export default function Navbar({ theme = 'light', toggleTheme }) {
               background: 'var(--btn-sec-bg)',
               border: '1px solid var(--border-subtle)',
               color: 'var(--text-primary)',
-              padding: '0.5rem',
+              padding: '0.45rem',
               borderRadius: 'var(--radius-sm)',
               cursor: 'pointer',
               display: 'none',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0,
             }}
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
@@ -173,10 +182,11 @@ export default function Navbar({ theme = 'light', toggleTheme }) {
             right: 0,
             background: 'var(--bg-secondary)',
             borderBottom: '1px solid var(--border-subtle)',
-            padding: '1.5rem',
+            padding: '1.25rem 1.5rem',
             display: 'flex',
             flexDirection: 'column',
-            gap: '1rem',
+            gap: '0.85rem',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
           }}
         >
           {navLinks.map((link) => (
@@ -189,7 +199,7 @@ export default function Navbar({ theme = 'light', toggleTheme }) {
               style={{
                 color: link.external ? 'var(--accent-emerald)' : 'var(--text-primary)',
                 textDecoration: 'none',
-                fontSize: '1rem',
+                fontSize: '0.95rem',
                 fontWeight: 600,
                 display: 'flex',
                 alignItems: 'center',
@@ -200,14 +210,34 @@ export default function Navbar({ theme = 'light', toggleTheme }) {
               {link.external && <ExternalLink size={16} />}
             </a>
           ))}
+
+          <a
+            href="#contact"
+            className="btn-primary"
+            onClick={() => setMobileMenuOpen(false)}
+            style={{
+              marginTop: '0.5rem',
+              padding: '0.75rem',
+              fontSize: '0.9rem',
+              justifyContent: 'center',
+              width: '100%',
+            }}
+          >
+            Get in Touch
+            <ArrowUpRight size={16} />
+          </a>
         </div>
       )}
 
-      {/* Mobile CSS responsive helper */}
+      {/* Mobile Responsive Helpers */}
       <style>{`
-        @media (max-width: 900px) {
+        @media (max-width: 960px) {
           .desktop-nav { display: none !important; }
-          .mobile-toggle { display: block !important; }
+          .mobile-toggle { display: flex !important; }
+        }
+        @media (max-width: 640px) {
+          .status-text { display: none !important; }
+          .nav-cta-btn { display: none !important; }
         }
       `}</style>
     </header>
