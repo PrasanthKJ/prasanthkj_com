@@ -33,14 +33,13 @@ export default function App() {
 
       {/* Main Page Layout Container */}
       <div className="container" style={{ flex: 1 }}>
-        {/* Centered Full-Width Hero Section */}
-        <Hero />
-
-        {/* Scroll Layout: Sticky Side Index Navigator & Content Grid */}
         <div className="page-wrapper">
+          {/* Sticky Side Index Navigator (Pinned at top: 100px) */}
           <SidebarNav />
 
+          {/* Main Content Area */}
           <main className="main-content">
+            <Hero />
             <Highlights />
             <WebSolutions />
             <Projects />

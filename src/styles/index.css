@@ -202,6 +202,14 @@ h1, h2, h3, h4, h5, h6 {
   min-width: 0;
 }
 
+/* Full-width Centered Hero inside main-content layout */
+@media (min-width: 1201px) {
+  .hero-full-centered {
+    margin-left: -240px;
+    width: calc(100% + 240px);
+  }
+}
+
 /* Glassmorphic Card Surface */
 .glass-card {
   background: var(--bg-card);

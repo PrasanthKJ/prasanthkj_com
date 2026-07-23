@@ -17,14 +17,19 @@ export default function SidebarNav() {
 
   useEffect(() => {
     const handleScroll = () => {
+      const highlightsEl = document.getElementById('highlights');
       const heroEl = document.getElementById('hero');
-      const heroHeight = heroEl ? heroEl.offsetHeight : 400;
 
-      // Show sidebar only after scrolling below the Hero section
-      if (window.scrollY > heroHeight - 150) {
-        setIsVisible(true);
+      if (highlightsEl) {
+        const highlightsTop = highlightsEl.offsetTop;
+        // Trigger sidebar fade-in when the Highlights section reaches 50% from the bottom of the viewport
+        const triggerPoint = highlightsTop - window.innerHeight * 0.5;
+        setIsVisible(window.scrollY >= triggerPoint);
+      } else if (heroEl) {
+        const triggerPoint = heroEl.offsetTop + heroEl.offsetHeight - window.innerHeight * 0.5;
+        setIsVisible(window.scrollY >= triggerPoint);
       } else {
-        setIsVisible(false);
+        setIsVisible(window.scrollY > 300);
       }
 
       // Track active section for highlights & below
@@ -60,9 +65,9 @@ export default function SidebarNav() {
         justifyContent: 'center',
         flexShrink: 0,
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+        transform: isVisible ? 'translateY(0)' : 'translateY(60px)',
         pointerEvents: isVisible ? 'auto' : 'none',
-        transition: 'opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+        transition: 'opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)',
       }}
     >
       <div

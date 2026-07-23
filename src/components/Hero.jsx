@@ -7,6 +7,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
+      className="hero-full-centered"
       style={{
         paddingTop: '140px',
         paddingBottom: '60px',
@@ -85,7 +86,7 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Social Icons & Direct Contact Row (Original Box Style with radius-md) */}
+        {/* Social Icons & Direct Contact Row (Box Style with radius-md) */}
         <div
           style={{
             display: 'flex',
