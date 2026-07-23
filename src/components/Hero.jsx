@@ -9,17 +9,21 @@ export default function Hero() {
       id="hero"
       style={{
         paddingTop: '140px',
-        paddingBottom: '80px',
+        paddingBottom: '60px',
         position: 'relative',
         overflow: 'hidden',
+        textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
       }}
     >
       {/* Background Ambient Glows */}
-      <div className="ambient-glow glow-1 pulse-animation"></div>
+      <div className="ambient-glow glow-1 pulse-animation" style={{ left: '50%', transform: 'translateX(-50%)' }}></div>
 
-      <div style={{ position: 'relative', zIndex: 1 }}>
+      <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '920px', width: '100%' }}>
         {/* Top Trust Status Pill */}
-        <div style={{ marginBottom: '1.5rem', display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center' }}>
+        <div style={{ marginBottom: '1.75rem', display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center', alignItems: 'center' }}>
           <div className="pill-badge-gold" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
             <Award size={16} color="var(--pill-gold-text)" />
             <span>{HERO_DATA.upworkStatus.title}</span>
@@ -42,8 +46,8 @@ export default function Hero() {
             marginBottom: '1.5rem',
             fontFamily: 'var(--font-heading)',
             letterSpacing: '-0.03em',
-            maxWidth: '900px',
             color: 'var(--text-primary)',
+            maxWidth: '900px',
           }}
         >
           I'm a <span className="gradient-text">Website Developer</span> crafting high-converting WordPress & Shopify sites.
@@ -63,14 +67,32 @@ export default function Hero() {
           Specializing in agency-grade web builds, WooCommerce e-commerce, and high-ROI local lead generation websites for <strong style={{ color: 'var(--text-primary)' }}>small business owners</strong> (lawn care, carpet cleaning, local contractors) and global brands.
         </p>
 
-        {/* Social Icons & Email Row */}
+        {/* Action Call to Action Buttons */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center', alignItems: 'center', marginBottom: '2.5rem' }}>
+          <a
+            href={HERO_DATA.calendlyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+            style={{ padding: '0.95rem 2rem', fontSize: '1rem' }}
+          >
+            <Calendar size={18} />
+            Book a 15-Min Strategy Call
+          </a>
+
+          <a href="#works" className="btn-secondary" style={{ padding: '0.95rem 2rem', fontSize: '1rem' }}>
+            View Client Case Studies
+          </a>
+        </div>
+
+        {/* Social Icons & Direct Contact Row (Original Box Style with radius-md) */}
         <div
           style={{
             display: 'flex',
             flexWrap: 'wrap',
             alignItems: 'center',
+            justifyContent: 'center',
             gap: '1.25rem',
-            marginBottom: '2.5rem',
             padding: '1rem 1.25rem',
             background: 'var(--btn-sec-bg)',
             borderRadius: 'var(--radius-md)',
@@ -125,24 +147,6 @@ export default function Hero() {
           >
             <Mail size={18} />
             <span>hello@prasanthkj.com</span>
-          </a>
-        </div>
-
-        {/* Action Call to Action Buttons */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center' }}>
-          <a
-            href={HERO_DATA.calendlyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-            style={{ padding: '0.95rem 2rem', fontSize: '1rem' }}
-          >
-            <Calendar size={18} />
-            Book a 15-Min Strategy Call
-          </a>
-
-          <a href="#works" className="btn-secondary" style={{ padding: '0.95rem 2rem', fontSize: '1rem' }}>
-            View Client Case Studies
           </a>
         </div>
       </div>

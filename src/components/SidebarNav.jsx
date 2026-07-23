@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Layers, Award, Briefcase, Workflow, Star, Code2, Mail, CheckCircle2 } from 'lucide-react';
+import { Award, Briefcase, Workflow, Star, Code2, Mail, CheckCircle2 } from 'lucide-react';
 
 export default function SidebarNav() {
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState('highlights');
+  const [isVisible, setIsVisible] = useState(false);
 
   const sections = [
-    { id: 'hero', label: 'Overview', icon: Layers },
     { id: 'highlights', label: 'Highlights', icon: Award },
     { id: 'small-biz', label: 'Local Biz Solutions', icon: Briefcase },
     { id: 'works', label: 'Client Works', icon: CheckCircle2 },
@@ -17,7 +17,18 @@ export default function SidebarNav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200;
+      const heroEl = document.getElementById('hero');
+      const heroHeight = heroEl ? heroEl.offsetHeight : 400;
+
+      // Show sidebar only after scrolling below the Hero section
+      if (window.scrollY > heroHeight - 150) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+
+      // Track active section for highlights & below
+      const scrollPosition = window.scrollY + 250;
       sections.forEach((sec) => {
         const el = document.getElementById(sec.id);
         if (el) {
@@ -31,6 +42,7 @@ export default function SidebarNav() {
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -47,6 +59,10 @@ export default function SidebarNav() {
         flexDirection: 'column',
         justifyContent: 'center',
         flexShrink: 0,
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
+        pointerEvents: isVisible ? 'auto' : 'none',
+        transition: 'opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
       }}
     >
       <div
