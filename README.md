@@ -1,6 +1,9 @@
 This site is build using Antigravity AI,
 for website www.prasanthkj.com
 
+Now:
+- checking for oppurtunity to update for automation, automotive awareness.
+
 
 
 # React + Vite
