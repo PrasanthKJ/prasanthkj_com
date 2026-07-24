@@ -275,6 +275,70 @@ h1, h2, h3, h4, h5, h6 {
   white-space: nowrap;
 }
 
+.pill-badge-purple {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.825rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background: var(--pill-bg);
+  border: 1px solid var(--pill-border);
+  color: var(--pill-text);
+  white-space: nowrap;
+}
+
+/* Centralized Hero Tech Stack Badges Styling */
+.tech-badges-container {
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem 0.4rem;
+}
+
+.tech-badge-chip {
+  font-size: 0.675rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  border: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  letter-spacing: 0.01em;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: all var(--transition-fast);
+  cursor: default;
+}
+
+.tech-badge-chip.purple {
+  background: rgba(44, 94, 173, 0.1);
+  color: var(--accent-purple);
+}
+
+.tech-badge-chip.emerald {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent-emerald);
+}
+
+.tech-badge-chip.cyan {
+  background: rgba(6, 182, 212, 0.1);
+  color: var(--accent-cyan);
+}
+
+.tech-badge-chip.gold {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--accent-gold);
+}
+
 /* Sidebar Active Link Style for Dark Mode Luminous Text Glow Effect */
 [data-theme="dark"] .sidebar-active-glow {
   font-weight: 800 !important;

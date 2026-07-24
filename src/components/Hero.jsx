@@ -1,6 +1,6 @@
 import React from 'react';
 import { HERO_DATA } from '../data/portfolioData';
-import { Award, CheckCircle, Mail, Calendar } from 'lucide-react';
+import { Award, CheckCircle, Cpu, Mail, Calendar } from 'lucide-react';
 import { FacebookIcon, TwitterIcon, LinkedinIcon } from './SocialIcons';
 
 export default function Hero() {
@@ -23,7 +23,7 @@ export default function Hero() {
       <div className="ambient-glow glow-1 pulse-animation" style={{ left: '50%', transform: 'translateX(-50%)' }}></div>
 
       <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: '920px', width: '100%' }}>
-        {/* Sleek Compact Trust Badges */}
+        {/* Sleek Compact Trust Badges Row */}
         <div style={{ marginBottom: '1.25rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center', alignItems: 'center' }}>
           <div className="pill-badge-gold" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', padding: '0.2rem 0.65rem' }}>
             <Award size={13} color="var(--pill-gold-text)" />
@@ -36,36 +36,41 @@ export default function Hero() {
             <CheckCircle size={13} color="var(--accent-emerald)" />
             <span>100% Job Success</span>
           </div>
+
+          <div className="pill-badge-purple" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', padding: '0.2rem 0.65rem', borderRadius: 'var(--radius-full)' }}>
+            <Cpu size={13} color="var(--pill-text)" />
+            <span>7+ Yrs Automotive Software Engineer (Tier-1 Industry Background)</span>
+          </div>
         </div>
 
         {/* Main Display Headline */}
         <h1
           style={{
-            fontSize: 'clamp(2.5rem, 5.5vw, 4.2rem)',
+            fontSize: 'clamp(2.4rem, 5.2vw, 4.1rem)',
             fontWeight: 800,
-            lineHeight: 1.1,
+            lineHeight: 1.15,
             marginBottom: '1.5rem',
             fontFamily: 'var(--font-heading)',
             letterSpacing: '-0.03em',
             color: 'var(--text-primary)',
-            maxWidth: '900px',
+            maxWidth: '920px',
           }}
         >
-          I'm a <span className="gradient-text">Website Developer</span> crafting high-converting WordPress & Shopify sites.
+          I build <span className="gradient-text">high-performing websites</span> & <span className="gradient-text-emerald">automated business workflows</span>.
         </h1>
 
         {/* Subtitle & Value Proposition */}
         <p
           style={{
-            fontSize: 'clamp(1.1rem, 2vw, 1.35rem)',
+            fontSize: 'clamp(1.05rem, 1.8vw, 1.25rem)',
             color: 'var(--text-secondary)',
-            maxWidth: '780px',
-            marginBottom: '2.5rem',
+            maxWidth: '840px',
+            marginBottom: '2rem',
             fontWeight: 400,
-            lineHeight: 1.6,
+            lineHeight: 1.65,
           }}
         >
-          Specializing in agency-grade web builds, WooCommerce e-commerce, and high-ROI local lead generation websites for <strong style={{ color: 'var(--text-primary)' }}>small business owners</strong> (lawn care, carpet cleaning, local contractors) and global brands.
+          Specializing in WordPress, custom website development, E-Commerce, workflow automation, API integrations, and CRM solutions that simplify complex processes and deliver reliable digital experiences.
         </p>
 
         {/* Action Call to Action Buttons */}
@@ -82,11 +87,33 @@ export default function Hero() {
           </a>
 
           <a href="#works" className="btn-secondary" style={{ padding: '0.95rem 2rem', fontSize: '1rem' }}>
-            View Client Case Studies
+            View Client Works
           </a>
         </div>
 
-        {/* Social Icons & Direct Contact Row (Box Style with radius-md) */}
+        {/* Direct Pure Tech Badges Container (Controlled via index.css) */}
+        <div className="tech-badges-container">
+          {[
+            { name: 'WordPress', type: 'purple' },
+            { name: 'WooCommerce', type: 'purple' },
+            { name: 'React', type: 'purple' },
+            { name: 'Shopify', type: 'purple' },
+            { name: 'n8n', type: 'emerald' },
+            { name: 'Zapier', type: 'emerald' },
+            { name: 'Pabbly', type: 'emerald' },
+            { name: 'AWS', type: 'cyan' },
+            { name: 'GitHub Actions', type: 'cyan' },
+            { name: 'CI/CD', type: 'cyan' },
+            { name: 'Docker', type: 'cyan' },
+            { name: 'Digital Marketing', type: 'gold' },
+          ].map((item, idx) => (
+            <span key={idx} className={`tech-badge-chip ${item.type}`}>
+              <span>{item.name}</span>
+            </span>
+          ))}
+        </div>
+
+        {/* Social Icons & Direct Contact Row */}
         <div
           style={{
             display: 'flex',
@@ -94,7 +121,7 @@ export default function Hero() {
             alignItems: 'center',
             justifyContent: 'center',
             gap: '1.25rem',
-            padding: '1rem 1.25rem',
+            padding: '0.75rem 1.25rem',
             background: 'var(--btn-sec-bg)',
             borderRadius: 'var(--radius-md)',
             border: '1px solid var(--border-subtle)',

@@ -2,8 +2,8 @@
 
 export const HERO_DATA = {
   name: "Prasanth KJ",
-  role: "WordPress CMS & Shopify Specialist | Web Developer",
-  tagline: "Building High-Converting Websites & Custom Web Solutions for Global Businesses & Growing Agencies",
+  role: "WordPress CMS, Business Automation & DevOps Specialist | Automotive Software Engineer",
+  tagline: "Building High-Performing Websites & Automated Business Workflows for Growing Businesses & Agencies",
   location: "Global Freelancer | Serving US, UK & Worldwide Clients",
   email: "hello@prasanthkj.com",
   calendlyUrl: "https://calendly.com/prasanthkj/15min",
@@ -12,6 +12,12 @@ export const HERO_DATA = {
     x: "https://x.com/theprasanthkj",
     linkedin: "https://linkedin.com/in/theprasanthkj",
   },
+  techStack: [
+    "WordPress", "WooCommerce", "React", "Shopify", 
+    "n8n", "Zapier", "Pabbly", 
+    "AWS", "GitHub Actions", "CI/CD", "Docker", 
+    "Digital Marketing"
+  ],
   blogUrl: "https://prasanthkj.com/blog",
   techBlogUrl: "https://hash.prasanthkj.com",
   upworkStatus: {
