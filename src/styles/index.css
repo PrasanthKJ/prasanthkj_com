@@ -307,7 +307,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Centralized Hero Tech Stack Badges Styling */
 .tech-badges-container {
-  max-width: 800px;
+  max-width: 840px;
   width: 100%;
   margin-bottom: 2rem;
   display: flex;
