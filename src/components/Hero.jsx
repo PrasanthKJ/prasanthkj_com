@@ -39,7 +39,7 @@ export default function Hero() {
 
           <div className="pill-badge-purple" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontSize: '0.75rem', padding: '0.2rem 0.65rem', borderRadius: 'var(--radius-full)' }}>
             <Cpu size={13} color="var(--pill-text)" />
-            <span>7+ Yrs Automotive Software Engineer (Tier-1 Industry Background)</span>
+            <span>7+ Yrs Automotive Software Engineer</span>
           </div>
         </div>
 
@@ -53,10 +53,16 @@ export default function Hero() {
             fontFamily: 'var(--font-heading)',
             letterSpacing: '-0.03em',
             color: 'var(--text-primary)',
-            maxWidth: '920px',
+            maxWidth: '1020px',
           }}
         >
-          I build <span className="gradient-text">high-performing websites</span> & <span className="gradient-text-emerald">automated business workflows</span>.
+          <span className="hero-line-1">
+            I build <span className="gradient-text">high-performing websites </span>
+          </span>
+          <br className="hero-title-br" />
+          <span className="hero-line-2">
+            & <span className="gradient-text-emerald">workflow automations</span>.
+          </span>
         </h1>
 
         {/* Subtitle & Value Proposition */}

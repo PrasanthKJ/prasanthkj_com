@@ -3,7 +3,7 @@
 export const HERO_DATA = {
   name: "Prasanth KJ",
   role: "WordPress CMS, Business Automation & DevOps Specialist | Automotive Software Engineer",
-  tagline: "Building High-Performing Websites & Automated Business Workflows for Growing Businesses & Agencies",
+  tagline: "Building High-Performing Websites & Workflow Automations for Small, Medium Businesses and Agencies",
   location: "Global Freelancer | Serving US, UK & Worldwide Clients",
   email: "hello@prasanthkj.com",
   calendlyUrl: "https://calendly.com/prasanthkj/15min",
