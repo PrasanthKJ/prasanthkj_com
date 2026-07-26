@@ -1,0 +1,7 @@
+# User-agent rules for Prasanth KJ Portfolio Website (www.prasanthkj.com)
+
+User-agent: *
+Allow: /
+
+# Sitemap Index Link for Google, Bing, and AI Crawlers
+Sitemap: https://www.prasanthkj.com/sitemap.xml
